@@ -1,0 +1,75 @@
+#category{
+	margin: 40px auto 40px auto;
+}
+#category ul{
+	text-align: center;
+}
+#category ul li{
+	display: inline-block;
+	width: 110px;
+	margin: 0 18px;
+}
+#category ul li a{
+	overflow: hidden;
+}
+#category ul li a img{
+	width: 110px;
+	height: 110px;
+	transition:0.5s;
+	border:3px solid #fff;
+}
+#category ul li a span.title{
+	font-size: 14px;
+	color: #908e8e;
+	display: block;
+	padding-top: 10px;
+}
+#category ul li a:hover img,#category ul li.active a img{
+	border-color:#98b900;
+	border-radius: 22px;
+}
+#category ul li a:hover span.title,#category ul li.active a span.title{
+	color: #98b900;
+}
+/*列表*/ 
+#list{
+	margin-bottom: 80px;
+}
+ul.list{
+	overflow: hidden;
+	width: 1300px;
+}
+ul.list li{
+	width: 277.5px;
+	padding: 5px;
+	float: left;
+	margin-right: 30px;
+	background: #e3e3e3;
+	margin-bottom: 30px;
+}
+ul.list li a img{
+	width: 100%;
+	height: 272.5px;
+}
+ul.list li:hover{
+	background: #e9e9e9;
+}
+ul.list li a .title{
+	line-height: 26px;
+	padding-top: 10px;
+}
+
+#list .page{
+	margin-top: 30px;
+}
+#list .page ul{
+	text-align: center;
+}
+
+
+
+
+
+
+
+

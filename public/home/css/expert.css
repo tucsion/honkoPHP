@@ -1,0 +1,325 @@
+@charset 'utf-8';
+
+#filter{
+	margin: 40px auto 35px auto;
+	border: 1px solid #d0d0d0;
+	padding: 5px 20px;
+}
+#filter dl{
+	border-top: 1px solid #ececec;
+	padding: 12px 0;
+	font-size: 16px;
+}
+#filter dl:first-child{
+	border-top: none;
+}
+#filter dl dt,#filter dl dd{
+	display: inline-block;
+}
+#filter dl dt{
+	width: 90px;
+	text-align: right;
+	color: #333;
+	font-weight: 800;
+}
+#filter dl dd a{
+	color: #555;
+	padding: 5px 10px;
+	display: inline-block;
+	transition:0.5s;
+}
+#filter dl dd a:hover,#filter dl dd a.active{
+	background: #98b900;
+	color:#fff;
+}
+.num{
+	padding-bottom: 30px;
+	font-size: 16px;
+	color: #555;
+}
+.num span{
+	color: #98b900;
+	margin:0 5px;
+}
+#main{
+	overflow: hidden;
+	margin-bottom: 100px;
+}
+#left{
+	width: 780px;
+	float: left;
+}
+#left ul{
+	width: 100%;
+}
+#left > ul > li{
+	width: 100%;
+	border: 1px solid #fff;
+	border-bottom: 1px solid #d0d0d0;
+	transition:0.5s;
+	padding: 20px;
+	overflow: hidden;
+}
+#left > ul > li:hover{
+	border: 1px solid #98b900;
+}
+#left > ul > li .face{
+	width: 144px;
+	height: 185px;
+	float: left;
+	margin-right: 20px;
+}
+#left > ul > li .face img{
+	width: 100%;
+	height: 100%;
+}
+
+#left > ul > li .info{
+	width: 310px;
+	height: 185px;
+	float: left;
+	position: relative;
+}
+#left > ul > li .info .top .name{
+	font-size: 24px;
+	color: #5b5b5b;
+	font-weight: 800;
+}
+#left > ul > li .info .top .zhicheng{
+	font-size: 14px;
+	color: #787878;
+}
+#left > ul > li .info .top .renzheng{
+	font-size: 12px;
+	color: #3c3c3c;
+	text-indent: 23px;
+	display: inline-block;
+	margin-left: 5px;
+}
+#left > ul > li .info .top .yirenzheng{
+	background: url(../images/icons.png) 0 -1331px no-repeat;
+}
+#left > ul > li .info .top .weirenzheng{
+	background: url(../images/icons.png) 0 -1421px no-repeat;
+	color: #CCC;
+}
+#left > ul > li .info .top .online{
+	padding: 3px 5px;
+	display: inline-block;
+	font-size: 12px;
+	color: #fff;
+}
+#left > ul > li .info .top .zaixian{
+	background: #e80404;
+}
+#left > ul > li .info .top .lixian{
+	background: #b0b0b0;
+}
+
+#left > ul > li .info .keshi{
+	color: #787878;
+	font-size: 14px;
+	margin-top: 5px;
+}
+#left > ul > li .info .shanchang{
+	color: #3c3c3c;
+	font-size: 12px;
+	margin-top: 5px;
+}
+
+
+#left > ul > li .list_btns{
+	width: 100%;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+#left > ul > li .list_btns .expert_btn1{
+	float: left;
+}
+#left > ul > li .list_btns .expert_btn2{
+	float: right;
+}
+#left > ul > li .expert_btn1,#left > ul > li .expert_btn2{
+	width: 144px;
+	height: 38px;
+	display: inline-block;
+	text-align: center;
+	line-height: 38px;
+	font-size: 16px;
+	border-radius: 3px;
+	transition:0.5s;
+	border: none;
+	cursor: pointer;
+}
+.expert_btn1{
+	background: #98b900;
+	color: #fff;	
+}
+.expert_btn1:hover{
+	background: #5c8f01;
+}
+.expert_btn2{
+	background: #b0b0b0;
+	color: #fff;
+}
+.expert_btn2:hover{
+	background: #ccc;
+}
+
+
+
+#left > ul > li .time{
+	width: 220px;
+	float: right;
+}
+
+.layui-table td, .layui-table th{
+	font-size: 12px;
+	padding: 2px 3px;
+	text-align: center;
+}
+.layui-table th{
+	color: #333;
+	font-weight: 400;
+}
+.layui-table td{
+	color: #999;
+}
+
+td.active{
+	background: #b5d425;
+	color: #fff;
+}
+
+#right{
+	width: 360px;
+	float: right;
+}
+#right .rightTitle{
+	width: 100%;
+	padding: 20px 0 10px 0;
+	display: inline-block;
+	border-bottom: 3px solid #98b900;
+	margin-bottom: 10px;
+}
+#right .rightTitle .title{
+	font-size: 22px;
+	color: #222;
+	float: left;
+}
+#right .rightTitle .more{
+	float: right;
+}
+#right .rightTitle .more a{
+	font-size: 14px;
+	color: #999;
+}
+#right .rightTitle .more a:hover{
+	color: #98b900;
+}
+
+.sideMenu ul li{
+	padding: 10px;
+	overflow: hidden;
+	border-bottom: 1px dashed #e4e4e4;
+}
+.sideMenu ul li a{
+	color: #746b6d;
+	font-size: 14px;
+	padding-bottom: 8px;
+	padding-top: 2px;
+	display: block;
+}
+
+
+.sideMenu ul li.active{
+	background: #f5f5f5;
+}
+.sideMenu ul li.active a{
+	color: #ff5600;
+}
+.sideMenu ul li.active dl{
+	display: block;
+}
+
+.sideMenu ul li dl{
+	display: none;
+}
+.sideMenu ul li dl dd.icon{
+	width: 100%;
+	display: block;
+}
+.sideMenu ul li dl dd.icon em{
+	font-style: normal;
+	font-size: 12px;
+	color: #999;
+	display: inline-block;
+	padding-bottom: 10px;
+	margin-right: 20px;
+	background-image: url(../images/icons.png);
+	background-repeat: no-repeat;
+	text-indent: 22px;
+}
+.sideMenu ul li dl dd.icon em.yuedu{
+	background-position: 0 -1502px;
+}
+.sideMenu ul li dl dd.icon em.pinglun{
+	background-position: 0 -1564px;
+}
+.sideMenu ul li dl dd.face{
+	width: 54px;
+	height: 70px;
+	float: left;
+	margin: 0 20px 0 0;
+}
+.sideMenu ul li dl dd.face img{
+	width: 100%;
+	height: 100%;
+}
+
+.sideMenu ul li dl dd.info{
+	float: left;
+	color: #aeaca7;
+	line-height: 22px;
+}
+.sideMenu ul li dl dd.info p span{
+	color: #5aa2e4;
+}
+
+
+/*留言*/
+
+#guest{
+	padding: 20px;
+	display: none;
+}
+#guest textarea{
+	width: 100%;
+	height: 100px;
+	resize: none; 
+	border: 1px solid #eee;
+	transition:1s;
+	font-size: 14px;
+	line-height: 26px;
+	padding: 10px;
+}
+#guest textarea:focus{
+	border-color: #98b900;
+	box-shadow: 0 0 1px 2px #98b900;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,51 @@
+@charset 'utf-8';
+@font-face {
+  
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+h1,
+h2,
+h3,
+h4,
+p,
+dl,
+dt,
+dd,
+img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+ul {
+  list-style: none;
+}
+body {
+  font-family: Tahoma,Helvetica Neue,Helvetica,PingFang SC,微软雅黑,Arial,sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  -moz-text-size-adjust: none;
+  -ms-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+}
+a {
+  text-decoration: none;
+}
+a:active,
+a:hover {
+  outline: 0;
+}

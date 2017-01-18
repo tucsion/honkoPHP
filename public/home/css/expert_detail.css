@@ -1,0 +1,346 @@
+
+/*专家信息*/
+#expert{
+	margin-top: 1px;
+	background: url(../images/expert_banner.jpg) top center no-repeat;
+	padding-top: 60px;
+	padding-bottom: 70px;
+}
+#expert .container{
+	overflow: hidden;
+}
+#expert .face{
+	width: 210px;
+	padding: 1px;
+	float: left;
+}
+#expert .face img{
+	width: 100%;
+	height: 270px;
+	border:1px solid #999;
+}
+#expert .face span.tool{
+	display: block;
+	font-size: 12px;
+	padding-top: 10px;
+}
+#expert .face span.tool i{
+	font-size: 12px;
+}
+
+#expert .info{
+	width: 950px;
+	float: right;
+}
+#expert .info .content{
+	color: #3c3c3c;
+	font-size: 14px;
+}
+#expert .info .content .top{
+	overflow: hidden;
+}
+
+#expert .info .content .top p.name{
+	font-size: 30px;
+	color: #fff;
+	font-weight: 800;
+	padding: 10px 0;
+	float: left;
+	width: 70%;
+}
+#expert .info .content .top p.name span{
+	font-weight: 400;
+	font-size: 20px;
+	padding-left: 10px;
+}
+#expert .info .content .top p.keshi{
+	font-size: 16px;
+	color: #fff;
+	float: left;
+	width: 70%;
+}
+#expert .info .content .top .expert_btn2{
+	background: #fff;
+	color: #FF5722;
+	float: right;
+	margin-top: -30px;
+}
+#expert .info .content dl{
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+#expert .info .content dl dd{
+	display: inline-block;
+	display: table-cell;
+	height: 28px;
+	padding-right: 20px;
+}
+#expert .info .content dl dd span{
+	vertical-align: middle;
+}
+#expert .info .content dl dd i.icon1,#expert .info .content dl dd i.icon2,#expert .info .content dl dd i.icon3{
+	width: 41px;
+	height: 28px;
+	display: inline-block;
+	background-image: url(../images/expert_icons.png);
+	background-repeat: no-repeat;
+	vertical-align: middle;
+}
+#expert .info .content dl dd i.icon1{
+	background-position: -5px 0;
+}
+#expert .info .content dl dd i.icon2{
+	background-position: -47px 0;
+}
+#expert .info .content dl dd i.icon3{
+	background-position: -100px 0;
+}
+
+#expert .info .content p.sex,#expert .info .content p.shanchang{
+	margin-bottom: 10px;
+}
+#expert .info .content p.sex span{
+	margin-right: 20px;
+}
+#expert .info .content p.jianjie{
+	line-height: 22px;
+}
+
+/*中间部分*/ 
+#main{
+	overflow: hidden;
+	margin-bottom: 30px;
+}
+
+#left{
+	width: 900px;
+	float: left;
+}
+#left .layui-tab .layui-tab-title li{
+	font-size: 18px;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+p.num{
+	color: #666;
+	font-size: 14px;
+	padding: 30px 0 10px 0;
+	text-indent: 2em;
+}
+p.num span{
+	color: #98b900;
+}
+.layui-tab-content{
+	padding: 0;
+}
+/*资料贡献*/
+ul.data{
+	overflow: hidden;
+}
+ul.data li{
+	height: 48px;
+	line-height: 48px;
+	color: #5a5a5a;
+	text-indent: 20px;
+	padding-right: 20px;
+	overflow: hidden;
+}
+ul.data li:hover{
+	background: #f9f9f9;
+}
+ul.data li:nth-child(2n){
+	background: #f2f2f2;
+}
+ul.data li a{
+	float: left;
+}
+ul.data li:hover a,ul.data li:hover a i{
+	color: #98b900;
+}
+ul.data li a,ul.data li a i{
+	color: #5a5a5a;
+	padding-right: 10px;
+}
+ul.data li span.time{
+	float: right;
+}
+.page{
+	height: 100px;
+}
+.page ul{
+	text-align: center;
+}
+/*患者提问*/
+dl.guest{
+	padding-top: 20px;
+}
+dl.guest dd{
+	border-bottom: 1px dashed #ccc;
+	padding: 20px 0;
+}
+dl.guest dd .title{
+	color: #009688;
+    font-size: 14px;
+    line-height: 28px;
+}
+dl.guest dd .title em{
+	padding-left: 10px;
+	color: silver;
+	font-size: 12px;
+}
+dl.guest dd .title img{
+	float: left;
+	margin: 2px 10px 0 0;
+	width: 50px;
+	height:50px;
+	-webkit-transition: -webkit-transform 1s;
+	border-radius: 50%;
+	
+}
+dl.guest dd .title img:hover{
+	-webkit-transform: rotate(360deg);
+}
+dl.guest dd .content{
+	padding-left: 30px;
+	color: grey;
+	word-wrap: break-word;
+	font-size: 14px;
+	line-height: 22px;
+}
+#guest_tanchuang{
+	margin: 20px;
+}
+
+/*患者评价*/
+ul.evaluate{
+	padding-top: 30px;
+}
+ul.evaluate li{
+	overflow: hidden;
+	border-bottom: 1px dashed #ccc;
+	padding: 20px 0;
+}
+ul.evaluate li .face{
+	width: 77px;
+	float: left;
+}
+ul.evaluate li .face img{
+	width: 77px;
+	height: 94px;
+}
+ul.evaluate li .face span.name{
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+ul.evaluate li .content{
+	float: right;
+	color: #3c3c3c;
+	width: 800px;
+}
+ul.evaluate li .content p.title{
+	overflow: hidden;
+}
+ul.evaluate li .content p.title span.title{
+	float: left;
+}
+ul.evaluate li .content p.title span.time{
+	float: right;
+}
+ul.evaluate li .content p.tags{
+	color: #8d8d8d;
+	padding: 10px 0;
+}
+ul.evaluate li .content p.tags span{
+	margin-right: 30px;
+}
+
+
+
+
+#right{
+	width: 260px;
+	float: right;
+}
+#right table th,#right table td{
+	text-align: center;
+}
+#right table tbody th{
+	font-weight: 400;
+}
+#right table tbody td i{
+	font-size: 20px;
+	color: #98b900;
+}
+
+
+/*底部推荐*/ 
+#recommend{
+
+}
+.recommend_title{
+	width: 100%;
+	padding-bottom: 20px;
+	overflow: hidden;
+}
+.recommend_title span.left{
+	font-size: 20px;
+	font-weight: 800;
+	color: #3e3e3e;
+	float: left;
+}
+.recommend_title span.right{
+	float: right;
+}
+.recommend_title span.right a{
+	font-size: 12px;
+	color: #3e3e3e;
+}
+.recommend_title span.right a:hover{
+	color: #98b900;
+	text-decoration: underline; 
+}
+.recommend{
+	width: 1270px;
+	overflow: hidden;
+}
+.recommend li{
+	width: 255px;
+	float: left;
+	margin-right: 60px;
+	padding-bottom: 50px;
+}
+.recommend li a img{
+	width: 100%;
+	height: 170px;
+	margin-bottom: 15px;
+}
+.recommend li .title{
+	font-size: 14px;
+	color: #3e3e3e;
+	width: 100%;
+	display: block;
+	margin-bottom: 5px;
+}
+.recommend li a:hover{
+	color: #98b900;
+	text-decoration: underline;
+}
+.recommend li .time{
+	color: #999;
+}
+.recommend li p.description{
+	font-size: 12px;
+	color: #949494;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+

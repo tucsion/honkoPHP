@@ -1,0 +1,160 @@
+@charset 'utf-8';
+
+#reg{
+	width: 100%;
+	height: 647px;
+	background: url(../images/reg_bg.jpg) center center no-repeat;
+}
+#reg .reg{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+#reg .reg .bg{
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	width: 480px;
+	height: 490px;
+	background: #fff;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+}
+#reg .reg form{
+	width: 480px;
+	height: 490px;
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	padding: 40px;
+}
+#reg .reg form dl{
+	width: 100%;
+}
+#reg .reg form dl dt{
+	width: 100%;
+	height: 50px;
+	display: block;
+}
+#reg .reg form dl dt p{
+	font-size: 14px;
+	color: #676767;
+}
+#reg .reg form dl dt p span.title{
+	font-size: 20px;
+	font-weight: 800;
+	color: #373737;
+	float: left;
+}
+#reg .reg form dl dt p span.right{
+	float: right;
+}
+#reg .reg form dl dt p span.right a{
+	color: #ca0000;
+}
+
+#reg .reg form dl > p{
+	margin: 10px 0;
+}
+#reg .reg form dl p label{
+	cursor: pointer;
+}
+#reg .reg form dl dd{
+	height: 44px;
+	border:1px solid #a6a6a6;
+	background: #fff;
+	line-height: 42px;
+	text-indent: 1em;
+	font-size: 14px;
+	color: #373737;
+	margin-bottom: 10px;
+}
+#reg .reg form dl input[type='submit']{
+	width: 100%;
+	height: 44px;
+	border: none;
+	background: #99b900;
+	font-size: 20px;
+	color: #fff;
+	cursor: pointer;
+	transition:0.5s;
+	margin-top: 20px;
+}
+#reg .reg form dl input[type='submit']:hover{
+	background: #5c8f01;
+}
+
+#reg .reg form dl dd input[type='text']{
+	width: 290px;
+	height: 38px;
+	border: none;
+	font-size: 16px;
+	background: none;
+}
+#reg .reg form dl dd select{
+	width: 290px;
+	height: 38px;
+	font-size: 14px;
+	border: none;
+}
+
+#yzm{
+	position: relative;
+	width: 100%;
+	height: 44px;
+	margin-bottom: 10px;
+}
+#reg .reg form dl dd.yzm{
+	width: 280px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#reg .reg form dl dd.yzm input{
+	width: 175px;
+}
+#yzm #message{
+	width: 100px;
+	height: 42px;
+	line-height: 42px;
+	text-align: center;
+	font-size: 14px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	background: #99b900;
+	color: #fff;
+	transition:0.5s;
+}
+#yzm #message:hover{
+	background:  #5c8f01;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

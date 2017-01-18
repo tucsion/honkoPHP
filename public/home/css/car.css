@@ -1,0 +1,93 @@
+/*span{display: inline-block;}*/
+#car{
+	margin-bottom: 100px;
+}
+.layui-form input[type="checkbox"]{
+	display: inline-block;
+}
+.location{
+	margin: 30px 0;
+}
+label{
+	cursor: pointer;
+}
+input[type=checkbox]{
+	cursor: pointer;
+}
+.min,.add{
+	margin-top: -3px;
+}
+.num{
+	font-size: 14px;
+	width: 80px;
+	border: none;
+	background: none;
+	color: #222;
+}
+.proNum{
+	text-align: center;
+	border: 1px solid #C9C9C9;
+	height: 30px;
+	line-height: 30px;
+	width: 50px;
+	border-radius: 2px;
+}
+#total{
+	font-size: 26px;
+	color: #FF5722;
+}
+td img{
+	border: 1px solid #C9C9C9;
+	padding: 1px;
+	background: #fff;
+	width: 100px;
+	height: 100px;
+	margin-right: 10px;
+	float: left;
+	border-radius: 2px;
+}
+
+.payment img{
+	width: 20px;
+	height: 20px;
+}
+
+.address thead,.payment thead,.fapiao thead,.discount thead,.products thead,.jiesuan thead{
+	color: #5FB878;
+}
+
+.no-list{
+	text-align: center;
+	color: #999;
+}
+.no-list a{
+	color: #1E9FFF;
+}
+.noFapiao,.fapiaoList{
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
