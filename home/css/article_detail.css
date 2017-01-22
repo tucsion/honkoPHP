@@ -1,0 +1,55 @@
+#content{
+	margin-bottom: 50px;
+}
+#content .content{
+	min-height: 500px;
+}
+#content .content h3{
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	line-height: 26px;
+}
+#content .content p.tags{
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+#content .content p.tags span{
+	margin: 0 10px;
+}
+
+
+#content .tools{
+	overflow: hidden;
+}
+#content .tools span.prev,#content .tools span.next{
+	width: 100%;
+	height: 30px;
+	display: inline-block;
+	line-height: 30px;
+}
+#content .tools em{
+	color: #666;
+}
+#content .tools span.share{
+	width: 100%;
+	height: 30px;
+	display: inline-block;
+	float: right;
+	text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,298 @@
+.location{
+	font-size: 14px;
+	color: #000;
+	padding: 40px 0 15px 0;
+}
+
+#main{
+	overflow: hidden;
+}
+
+#left{
+	width: 890px;
+	float: left;
+	margin-bottom: 50px;
+	min-height: 780px;
+}
+#filter{
+	border: 1px solid #d0d0d0;
+	padding: 5px 20px;
+	border-bottom: none;
+}
+#filter dl{
+	border-top: 1px solid #ececec;
+	padding: 12px 0;
+	font-size: 16px;
+}
+#filter dl:first-child{
+	border-top: none;
+}
+#filter dl dt,#filter dl dd{
+	display: inline-block;
+}
+#filter dl dt{
+	width: 90px;
+	text-align: right;
+	color: #333;
+	font-weight: 800;
+}
+#filter dl dd a{
+	color: #555;
+	padding: 5px 10px;
+	display: inline-block;
+	transition:0.5s;
+}
+#filter dl dd a:hover,#filter dl dd a.active{
+	background: #98b900;
+	color:#fff;
+}
+
+.tools{
+	width: 100%;
+	height: 56px;
+	line-height: 56px;
+	border:1px solid #d0d0d0;
+	background: #fafafa;
+	padding: 0 20px;
+}
+
+.tools .layui-nav{
+	width: 100%;
+	background: none;
+}
+.tools .layui-nav li{
+	width: auto;
+	font-size: 16px;
+}
+.tools .layui-nav .layui-nav-item a{
+	color: #000;
+}
+.tools .layui-nav .layui-nav-item a span.layui-nav-more{
+	border-color: #c2c2c2 transparent transparent;
+	top: 24px;
+}
+.tools .layui-nav .layui-nav-item .layui-nav-mored {
+	top: 18px !important;
+    border-color:  transparent transparent #2F4056 !important;
+}
+.tools .layui-nav-bar{
+	display: none;
+}
+.tools .layui-nav li:first-child{
+	width: 90px;
+	text-align: right;
+	color: #333;
+	font-weight: 800;
+}
+/*商品列表开始*/ 
+#list{
+	
+}
+#list ul{
+	overflow: hidden;
+	width: 940px;
+}
+#list ul li{
+	width: 268px;
+	float: left;
+	margin-right: 43px;
+	margin-top: 50px;
+}
+#list ul li a.img img{
+	width: 268px;
+	height: 268px;
+	border:1px solid #cdcdcd;
+}
+#list ul li .price{
+	overflow: hidden;
+	padding: 10px 0;
+}
+#list ul li .price span.left,#list ul li .price span.right{
+	display: inline-block;
+}
+#list ul li .price span.left{
+	float: left;
+	font-size: 20px;
+	font-weight: 800;
+	color: #ff0000;
+}
+#list ul li .price span.right{
+	float: right;
+	font-size: 12px;
+	color: #303030;
+	padding-top: 8px;
+}
+#list ul li a.title{
+	color: #303030;
+	font-size: 14px;
+}
+
+
+
+#right{
+	width: 280px;
+	float: right;
+}
+#right #box{
+	width: 100%;
+	border:1px solid #ccc;
+	margin-bottom: 20px;
+}
+#right #box .headTop{
+	height: 46px;
+	line-height: 46px;
+	background: #f4f4f4;
+	font-size: 18px;
+	color: #333;
+	font-weight: 800;
+	border-bottom: 1px solid #ccc;
+	text-indent: 10px;
+}
+/*销量排行*/
+ul.sales{
+	padding: 10px;
+}
+ul.sales li{
+	border-top: 1px dashed #ccc;
+}
+ul.sales li:first-child{
+	border-top: none;
+}
+ul.sales li .top{
+	overflow: hidden;
+	width: 100%;
+	margin: 10px 0;
+}
+ul.sales li .top i,ul.sales li .top a{
+	display: inline-block;
+}
+ul.sales li i.index{
+	padding: 1px 5px;
+	font-style: normal;
+	background: #999;
+	font-weight: 800;
+	color: #fff;
+	font-size: 12px;
+}
+ul.sales li i.num{
+	float: right;
+}
+ul.sales li .info{
+	width: 100%;
+	margin: 10px 0;
+}
+ul.sales li .info p{
+	text-align: center;
+}
+ul.sales li .info p img{
+	width: 125px;
+	height: 125px;
+	margin: 10px 0;
+}
+ul.sales li i.num span,ul.sales li p.tags span{
+	color: #ff580d;
+}
+ul.sales li .info{
+	display: none;
+}
+
+ul.sales li.active .info{
+	display: block;
+}
+ul.sales li.active .top i.num{
+	display: none;
+}
+ul.sales li.active .top i.index{
+	background: #e54418;
+}
+ul.sales li.active .top a{
+	color: #e54418;
+}
+/*用户评价*/
+ul.evaluate{
+	padding: 10px;
+}
+ul.evaluate li{
+	overflow: hidden;
+	border-top: 1px dashed #ccc;
+	padding: 10px 0;
+}
+ul.evaluate li:first-child{
+	border-top: none;
+}
+ul.evaluate li a{}
+ul.evaluate li a img{
+	border:1px solid #eee;
+	width: 60px;
+	height: 60px;
+	float: left;
+	margin-right: 10px;
+}
+ul.evaluate li a:hover img{
+	border:2px solid #98b900;
+	border-radius: 10px;
+}
+ul.evaluate li .info{
+
+}
+ul.evaluate li .info p.tags{
+	line-height: 22px;
+}
+ul.evaluate li .info p.tags span.name{
+	font-size: 14px;
+	color: #666;
+	margin-right: 10px;
+}
+ul.evaluate li .info p.tags span.time{
+	font-size: 12px;
+	color: #999;
+}
+ul.evaluate li .info p.content{
+	font-size: 12px;
+	color: #333;
+}
+
+/*浏览历史*/ 
+ul.history{
+	padding: 10px;
+}
+ul.history li{
+	border-top: 1px dashed #ccc;
+	padding: 10px 0;
+	overflow: hidden;
+}
+ul.history li:first-child{
+	border-top: none;
+}
+ul.history li a.img{
+	float: left;
+	margin-right: 10px;
+}
+ul.history li a.img img{
+	width: 80px;
+	height: 80px;
+	border:1px solid #ccc;
+}
+ul.history li a.img img:hover{
+	border:2px solid #98b900;
+	border-radius: 10px;
+}
+ul.history li p.title a{
+	font-size: 12px;
+	color: #303030;
+	line-height: 25px;
+}
+ul.history li p.price{
+	font-size: 14px;
+	color: #ff0000;
+	font-weight: 800;
+}
+
+
+
+
+
+
+
+
+

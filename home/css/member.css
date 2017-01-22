@@ -1,0 +1,550 @@
+#member{
+	margin: 40px auto;
+	overflow: hidden;
+}
+
+.greenBox{
+	border:1px solid #c6c6c6;
+	border-top: 3px solid #98b900;
+}
+.headTitle{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background: #ebebeb;
+	text-indent: 24px;
+	font-size: 14px;
+	color: #3d3d3d;
+}
+
+
+/*左边菜单*/ 
+#menu{
+	width: 260px;
+	float: left;
+	padding-bottom: 20px;
+}
+#menu dl{
+	padding-bottom: 10px;
+}
+#menu dl dd{
+	border-top: 1px dashed #eee;
+}
+#menu dl dt + dd{
+	border-top: none;
+	padding-top: 10px;
+}
+#menu dl dd a{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	font-size: 12px;
+	color: #3d3d3d;
+	text-indent: 20px;
+}
+#menu dl dd a i{
+	color: #fff;
+	font-size: 12px;
+}
+#menu dl dd:hover a,#menu dl dd:hover a i,#menu dl dd.active a,#menu dl dd.active a i{
+	color: #98b900;
+}
+
+
+/*内容区域*/
+#main{
+	width: 900px;
+	min-height: 800px;
+	float: right;
+}
+
+/*会员中心首页*/
+#main .index{
+	padding: 30px;
+}
+#main .index .head{
+	width: 100%;
+	overflow: hidden;
+}
+#main .index .head img{
+	width: 78px;
+	height: 78px;
+	float: left;
+	border:1px solid #ccc;
+	padding: 1px;
+	margin-right: 20px;
+}
+#main .index .head p.name{
+	padding: 5px 0;
+}
+#main .index .head p.name span.name{
+	font-size: 26px;
+	color: #1f1f1f;
+	margin-right: 20px;
+}
+#main .index .head p.name span.nicheng{
+	font-size: 14px;
+	color: #ee272d;
+}
+#main .index .head p.tags{
+	color: #787878;
+	font-size: 14px;
+	margin-top: 3px;
+}
+#main .index .head p.tags span{
+	margin-right: 20px;
+}
+#main .index .head p.tags span em a{
+	color: #98b900;
+	font-weight: 800;
+	text-decoration: underline;
+}
+#main .index .list{
+	margin-top: 60px;
+}
+#main .index .list p.bTitle{
+	font-size: 22px;
+	color: #2d2c2c;
+}
+
+#main .index .list table th{
+	color: #2d2c2c;
+	font-size: 14px;
+}
+#main .index .list table td{
+	color: #3c3c3c;
+	font-size: 12px;
+}
+#main .index .list table th,#main .index .list table td{
+	text-align: center;
+}
+
+.layui-form-label{
+	width: 100px;
+}
+
+.layui-input-inline{
+	width: 120px;
+	margin-right: 0;
+	margin-left: 10px;
+}
+
+.layui-tab-content{
+	padding: 0;
+}
+
+.layui-form-switch,.layui-form-onswitch{
+	width: 50px;
+}
+
+.layui-form-switch i{
+	left: 3px;
+	top: 2px;
+}
+.layui-form-onswitch i{
+	left: 30px;
+}
+.w50{
+	width: 50%;
+}
+/*基础资料*/
+.base .content .layui-form{
+	margin:30px 100px 30px 30px;
+}
+.base .content .layui-form .area .layui-input-inline{
+	margin-right: 0;
+	margin-left: 10px;
+}
+.base .img{
+	position: relative;
+}
+.base .img input[type=file]{
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.base .img img{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #333;
+	display: none;
+}
+.opacityBtn{
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.base .content .layui-form .layui-select-title{}
+/*地址管理*/
+.address .content{
+	padding: 30px;
+	overflow: visible;
+}
+.address .content p.tishi{
+	color: #FF5722;
+	padding-bottom: 10px;
+}
+.address .content .layui-tab-content{
+	padding-top: 30px;
+}
+.address .content .layui-form-switch,.address .content .layui-form-onswitch{
+	float: left;
+	margin-right: 10px;
+}
+/*认证管理*/
+.verify{
+	padding: 30px;
+}
+/*密码修改*/
+.pass{
+	padding: 30px;
+}
+/*人物管理*/
+.character{
+	padding: 30px ;
+}
+.character td,.character th{
+	text-align: center;
+}
+.character_show table th{
+	text-align: right;
+}
+/*病历管理*/
+.medical_records{
+	padding: 30px;
+}
+/*订单管理*/
+.order{
+	padding: 30px;
+}
+.order .layui-form .layui-form-item .layui-input-inline{
+	width: 120px;
+}
+
+.order .layui-form .layui-form-label{
+	width: auto;
+	padding: 9px 0;
+}
+.order .layui-form .layui-form-item .layui-input-inline.link{
+	width: auto !important;
+	height: 38px;
+	margin: 0;
+	line-height: 38px;
+}
+/*收藏*/
+.collection{
+	padding: 30px;
+}
+/*收藏的专家*/
+.collection .expert{
+	width: 900px;
+	overflow: hidden;
+}
+.collection .expert li{
+	width: 410px;
+	border:1px solid #eee;
+	float: left;
+	margin-right: 18px;
+	padding: 10px;
+	margin-bottom: 18px;
+	position: relative;
+}
+.collection .expert li:hover{
+	border-radius: 10px;
+	border-color: #98b900;
+}
+.collection .expert li a.img{
+	width: 144px;
+	height: 185px;
+	float: left;
+	margin-right: 10px;
+}
+.collection .expert li a.img img{
+	width: 100%;
+	height: 100%;
+}
+.collection .expert li .info p{
+	margin-bottom: 10px;
+}
+.collection .expert li .info p.name{
+	color: #3e3e3e;
+}
+.collection .expert li .info p.name span{
+	font-size: 20px;
+	padding-right: 10px;
+}
+.collection .expert li .info p.shanchang,.collection .expert li .info p.keshi{
+	color: #949494;
+}
+.collection .expert li .info p.shanchang span{
+	color: #333;
+}
+.collection .expert li .tools{
+	text-align: right;
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	display: none;
+}
+.collection .expert li:hover .tools{
+	display: block;
+}
+/*收藏的器械*/
+.collection .device{
+	width: 900px;
+	overflow: hidden;
+}
+.collection .device li{
+	width: 195px;
+	float: left;
+	margin-right: 20px;
+	border:1px solid #eee;
+	margin-bottom: 20px;
+	padding: 10px;
+	position: relative;
+}
+.collection .device li:hover{
+	border-color: #98b900;
+}
+.collection .device li .bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	background: #fff;
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+	display: none;
+	text-align: center;
+	padding-top: 100px;
+}
+.collection .device li .tools{
+	position: absolute;
+	width: 100%;
+	top: 100px;
+	left: 0;
+	text-align: center;
+	display: none;
+}
+.collection .device li img{
+	width: 173px;
+	height: 173px;
+	margin-bottom: 10px;
+}
+.collection .device li p.title{
+	color: #333;
+}
+.collection .device li p.price{
+	color: #FF5722;
+}
+.collection .device li p.price span{
+	color: #999;
+	font-size: 12px;
+}
+/*收藏的文章*/
+.collection .article{
+	
+}
+.collection .article li{
+	height: 45px;
+	line-height: 45px;
+	border-bottom: 1px dashed #ccc;
+}
+.collection .article li a,.collection .article li i{
+	color: #666;
+}
+.collection .article li:hover{
+	text-indent: 10px;
+}
+.collection .article li:hover a.title,.collection .article li:hover i{
+	color: #98b900;
+}
+.collection .article li span{
+	float: right;
+}
+
+.collection .article li:hover span i:hover{
+	cursor: pointer;
+	color: #FF5722;
+}
+.collection .article li span.transition button{
+	font-size: 8px;
+	height: 14px;
+	line-height: 12px;
+	padding: 0 2px;
+}
+.collection .article li span.transition button i{
+	font-size: 10px !important;
+}
+/*积分*/
+.integration{
+	padding: 30px;
+}
+.integration tr.del span{
+	text-decoration:line-through
+}
+/*消息中心*/
+.message{
+	padding: 30px;
+}
+/*系统消息*/
+.message .system li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dashed #eee;
+}
+.newIcon{
+	background: #ff0000;
+	padding: 0;
+	font-size: 6px;
+	height: 10px;
+	line-height: 8px;
+	cursor:default;
+	margin-top: -20px;
+}
+.message .system li .right{
+	float: right;
+	color: #999;
+}
+.message .system li .left{
+	float: left;
+}
+.message .system li i.delBtn{
+	display: none;
+	cursor: pointer;
+}
+.message .system li:hover i.delBtn{
+	display: inline-block;
+}
+
+.message .message_layer{
+	padding: 30px;
+}
+/*交易提醒*/
+.message .business li{
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px dashed #eee;
+}
+.
+.newIcon{
+	background: #ff0000;
+	padding: 0;
+	font-size: 6px;
+	height: 10px;
+	line-height: 8px;
+	cursor:default;
+	margin-top: -20px;
+}
+.message .business li .right{
+	float: right;
+	color: #999;
+}
+.message .business li .left{
+	float: left;
+}
+.message .business li i.delBtn{
+	display: none;
+	cursor: pointer;
+}
+.message .business li:hover i.delBtn{
+	display: inline-block;
+}
+
+.message .message_layer{
+	padding: 30px;
+}
+/*专家回复*/
+.message .expert{
+
+}
+.message .expert li{
+	border:1px solid #eee;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.message .expert li:hover{
+	border-radius: 10px;
+	border-color: #98b900;
+	box-shadow: 0 0 2px 1px #98b900;
+}
+.message .expert li p.head{
+	border-bottom: 1px dashed #eee;
+	padding: 5px 0 10px 0;
+	color: #666;
+}
+.message .expert li p.content{
+	padding: 10px 0;
+	font-size: 16px;
+}
+.message .expert li .showBtn{
+	overflow: hidden;
+}
+.message .expert li .showBtn button{
+	float: right;
+	line-height: 20px ;
+}
+.message .expert li .showBtn button i{
+	font-size: 10px !important;
+}
+
+/*留言*/
+.message .guest{
+
+}
+.message .guest li{
+	padding: 10px;
+	border:1px solid #eee;
+	margin-bottom: 20px;
+	line-height: 22px;
+}
+.message .guest li:hover{
+	border-radius: 10px;
+	border-color: #98b900;
+	box-shadow: 0 0 2px 1px #98b900;
+}
+.message .guest li div.head{
+	border-bottom: 1px dashed #eee;
+	padding: 5px 0 10px 0;
+	color: #666;
+	overflow: hidden;
+}
+.message .guest li div.head .left{
+	float: left;
+}
+.message .guest li div.head .left span{
+	margin: 0 5px;
+}
+.message .guest li div.head .left span.time{
+	font-size: 12px;
+	color: #999;
+}
+.message .guest li div.head .left span.zhuanjia a{
+	text-decoration: underline;
+	color: #98b900;
+}
+.message .guest li div.head .right{
+	float: right;
+	display: none;
+}
+.message .guest li:hover div.head .right{
+	display: block;
+}
+.message .guest li p.content{
+	padding: 10px 0;
+}
+#quick_guest{
+	display: none;
+}
+
+
+
+
+
+
+
+
