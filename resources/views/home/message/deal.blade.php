@@ -28,7 +28,7 @@
 		</li>
 	@endforeach	
 	</ul>
-	<div class="page"> </div>
+	<div class="page"> {!!$deal -> links()!!} </div>
 </div>
 </div>
 <script type="text/javascript">

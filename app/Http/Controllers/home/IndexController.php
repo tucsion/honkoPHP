@@ -29,7 +29,8 @@ class IndexController extends Controller
       $huiyi = DB::table('hkyl_cate') -> where('pid','=','11') -> orderBy('id') -> first();
       $xuanzhe = 1;
 
-    	return view('home.index',['set' => $set,'qiye'=>$qiye,'huiyi'=>$huiyi,'yangsheng'=>$yangsheng,'expert' => $expert,'jiaoyu'=>$jiaoyu,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'xuanzhe' => $xuanzhe]);
+      $lunbo = DB::table('hkyl_pic') -> where('state',0) -> get();
+    	return view('home.index',['set' => $set,'qiye'=>$qiye,'huiyi'=>$huiyi,'lunbo'=>$lunbo,'yangsheng'=>$yangsheng,'expert' => $expert,'jiaoyu'=>$jiaoyu,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'xuanzhe' => $xuanzhe]);
     }
     
    

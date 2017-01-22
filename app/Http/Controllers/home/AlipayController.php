@@ -199,6 +199,15 @@ class AlipayController extends Controller
             $nzxnum = DB::table('hkyl_sertype') -> where('id',$typeid) -> value('tnumber');
             $order = DB::table('hkyl_myserve') -> where('servenum',$servenum) -> first();
             $zjid = DB::table('hkyl_servexq') -> where('servenum',$servenum) -> value('zjid');
+            $f = DB::table('hkyl_follow') -> where('bid',$illid) -> where('zjid',$zjid) -> first();
+            if(!$f)
+            {
+                $gz['bid'] = $illid;
+                $gz['zjid'] = $zjid;
+                $gz['gztime'] = time();
+                $fo = DB::table('hkyl_follow') -> insert($gz);
+            }
+            
             $zjnum = DB::table('hkyl_user') -> where('id',$zjid) -> value('jfnum');
             $zjprice =  DB::table('hkyl_user') -> where('id',$zjid) -> value('price');
             $zjp['price']  = $zjprice + $order -> price;

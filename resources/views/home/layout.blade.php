@@ -6,13 +6,13 @@
     <title>康复社-首页</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
-    
-    <link rel="stylesheet" type="text/css" href="{{ url('/home/layui/css/layui.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/common.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/index.css') }}">
-    
     <script src="{{ url('http://libs.baidu.com/jquery/1.8.0/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('/home/layui/layui.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/index.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('/home/layui/css/layui.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/common.css') }}">
+    
+   
     <script type="text/javascript">
         layui.use('element');
         
@@ -32,7 +32,7 @@
     <!-- 头部 -->
     <div id="head">
         <div class="top">
-            <h1><a href="#"><img src="{{ url('/updates')}}/{{$set -> logo1}}" alt=""></a></h1>
+            <h1><a href="{{url('/')}}"><img src="{{ url('/updates')}}/{{$set -> logo1}}" alt=""></a></h1>
             <div class="topMember">
             @if(session('user'))
             <a id="memberIndex" href ="{{ url('/home/user/index')}}">会员中心</a>

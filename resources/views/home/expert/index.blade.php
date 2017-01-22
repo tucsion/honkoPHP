@@ -174,11 +174,13 @@
 							@endforeach
 						</p>
 						<p class="shanchang">{{ $u -> shanchang }}</p>
+						@if(empty(session('user')) or session('user') -> utp == 1)
 						<div class="list_btns">
-							<button class="expert_btn1">免费留言</button>
+							<button class="expert_btn1" id='{{$u -> id}}'>免费留言</button>
 							<button class="expert_btn2" user="{{$u -> id}}">付费咨询</button>
 							<input id="user" name="hid" type="hidden" value="{{$userid}}" />
 						</div>
+						@endif
 					</div>
 					<div class="time">
 						<table class="layui-table">
@@ -286,10 +288,16 @@
 	
 	
 	
-		<form action="{{ url('/expert/doliuyan')}}"  method="post">
+		<form action="{{ url('/expert/message')}}"  method="post">
 		{{ csrf_field() }}
-			<textarea name="liuyan"  cols="30" id='lys' rows="10"></textarea>
-			<button>提交</button>
+			<div class="layui-form-item">
+				<textarea name="message" placeholder="请输入内容" class="layui-textarea"></textarea>
+				<input type="hidden" id="zjid" name='zjid' value=''></input>
+			</div>
+			<div class="layui-form-item">
+				<button class="layui-btn" class="guestBtn" lay-submit lay-filter="formDemo">提交留言</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
 		</form>
 	
 	</div>

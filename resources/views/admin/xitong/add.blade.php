@@ -1,19 +1,19 @@
 @extends('admin.layout')
 @section('content')
 <script type="text/javascript">
-    document.title='消息发布';
+    document.title='科室添加';
 </script> 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                康复科管理
+                消息管理
                 <small>添加</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{ url('/admin/index')}}"><i class="fa fa-dashboard"></i>主页</a></li>
-                <li><a href="{{ url('/admin/keshi')}}">康复科</a></li>
+                <li><a href="{{ url('/admin/xitong')}}">系统消息</a></li>
                 <li class="active">添加页面</li>
             </ol>
         </section>
@@ -50,35 +50,21 @@
 						    
 						@endif
 
-                        <form class="form-horizontal" action="{{ url('/admin/keshi') }}" method='post'>
+                        <form class="form-horizontal" action="{{ url('/admin/xitong') }}" method='post'>
                             {{ csrf_field() }}
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">康复科</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">消息名</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name='name' value="" class="form-control" id="inputEmail3" placeholder="请输入科室名">
+                                        <input type="text" name='wname' value="" class="form-control" id="inputEmail3" placeholder="请输入消息名称">
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">描述</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">消息内容</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name='describe' value="" class="form-control" id="inputEmail3" placeholder="不填则与科室名相同">
+                                        <textarea name="wcontent" value='' placeholder="请输入消息内容"  class="col-sm-10"></textarea>
                                     </div>
                                 </div>
-                               
-                                <div class="form-group">
-                                 <label for="inputPassword3"  class="col-sm-2 control-label">父分类</label>
-                                <div class="col-sm-10">
-                                 <select name='pid' class='form-control'>
-                                       <option value='0'>根分类</option>
-                                 @foreach($data as $cate)
-
-                                       <option value="{{ $cate -> id }}">{{ $cate->name }}</option>
-                                 @endforeach     
-                                   </select>
-                                    
-                                </div>
-                                  
                               </div>
                                 
                             </div><!-- /.box-body -->

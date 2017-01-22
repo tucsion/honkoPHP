@@ -71,6 +71,23 @@ class Goodscontroller extends Controller
 
         return view('admin.goods.index',['data' => $data,'cate'=>$cate,'request' => $request->all()]);
     }
+    public function editxt($id)
+    {
+        $tuisong = DB::table('hkyl_winmsd') -> where('id',$id) -> first();
+       return view('admin.xitong.edit',['tuisong'=>$tuisong]);
+    }
+    public function updatext(Request $request)
+    {
+        $data = $request -> except('_token');
+        $res= DB::table('hkyl_winmsd') -> update($data);
+        if($res)
+        {
+            return redirect('/admin/xitong')->with(['info'=>'数据修改成功']);
+        }else{
+            return back() -> with(['info'=>'数据修改失败']);
+        }
+       
+    }
     //edit
     public function edit($id)
     {

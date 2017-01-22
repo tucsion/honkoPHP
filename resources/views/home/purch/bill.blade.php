@@ -28,9 +28,7 @@
 <div class="address">
 	<div class="headTitle">发票管理</div>
 	<div class="content">
-	@if(session('user') -> utp == 1)
 		<p class="tishi">温馨提示：这里的发票为购买商品邮寄发票</p>
-	@endif
 		<div class="layui-tab">
 			<ul class="layui-tab-title">
 				<li class="layui-this">发票列表</li>

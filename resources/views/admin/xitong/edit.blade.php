@@ -1,20 +1,20 @@
 @extends('admin.layout')
 @section('content')
 <script type="text/javascript">
-    document.title='消息发布';
+    document.title='消息修改';
 </script> 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                康复科管理
-                <small>添加</small>
+                消息管理
+                <small>修改</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="{{ url('/admin/index')}}"><i class="fa fa-dashboard"></i>主页</a></li>
-                <li><a href="{{ url('/admin/keshi')}}">康复科</a></li>
-                <li class="active">添加页面</li>
+                <li><a href="{{ url('/admin/xitong')}}">系统消息</a></li>
+                <li class="active">修改页面</li>
             </ol>
         </section>
 
@@ -27,18 +27,9 @@
                     <!-- Horizontal Form -->
                     <div class="box box-info">
                         <div class="box-header with-border">
-                            <h3 class="box-title">添加页面</h3>
+                            <h3 class="box-title">修改页面</h3>
                         </div><!-- /.box-header -->
                         <!-- form start -->
-                        @if (count($errors) > 0)
-						    <div class="alert alert-danger">
-						        <ul>
-						            @foreach ($errors->all() as $error)
-						                <li>{{ $error }}</li>
-						            @endforeach
-						        </ul>
-						    </div>
-						@endif
 						@if(session('info'))
 						<div class="alert alert-danger">
 						        <ul>
@@ -50,35 +41,31 @@
 						    
 						@endif
 
-                        <form class="form-horizontal" action="{{ url('/admin/keshi') }}" method='post'>
+                        <form class="form-horizontal" action="{{ url('/admin/xitong/updatext') }}" method='post'>
                             {{ csrf_field() }}
                             <div class="box-body">
                                 <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">康复科</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">消息名</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name='name' value="" class="form-control" id="inputEmail3" placeholder="请输入科室名">
+                                        <input type="text" name='wname' value="{{$tuisong -> wname}}" class="form-control" id="inputEmail3" placeholder="请输入消息名称">
                                     </div>
                                 </div>
                                  <div class="form-group">
-                                    <label for="inputEmail3" class="col-sm-2 control-label">描述</label>
+                                    <label for="inputEmail3" class="col-sm-2 control-label">消息内容</label>
                                     <div class="col-sm-10">
-                                        <input type="text" name='describe' value="" class="form-control" id="inputEmail3" placeholder="不填则与科室名相同">
+                                        <textarea name="wcontent" value='' placeholder="请输入消息内容"  class="col-sm-10">{{$tuisong -> wcontent}}</textarea>
                                     </div>
-                                </div>
-                               
-                                <div class="form-group">
-                                 <label for="inputPassword3"  class="col-sm-2 control-label">父分类</label>
-                                <div class="col-sm-10">
-                                 <select name='pid' class='form-control'>
-                                       <option value='0'>根分类</option>
-                                 @foreach($data as $cate)
-
-                                       <option value="{{ $cate -> id }}">{{ $cate->name }}</option>
-                                 @endforeach     
+                                </div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">消息状态</label>
+                                 <div class="col-sm-10">
+                                    <select name='wstate' class='form-control'>
+                                       <option value='0'>发布中</option>
+                                       <option value="1">已结束</option>
                                    </select>
+                                   </div>
+                                <div>
                                     
                                 </div>
-                                  
                               </div>
                                 
                             </div><!-- /.box-body -->

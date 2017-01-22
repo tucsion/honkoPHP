@@ -60,9 +60,9 @@
                                 <tr>
                                 
                                     <td class="ids">{{ $myorder ->id }}</td>
-                                    <td>{{ $myorder->onumber }}</td>
+                                    <td>{{ $myorder-> onumber }}</td>
                                     <td> {{ $myorder -> price}}</td>
-                                    <td> {{ $myorder -> conname }}</td>
+                                    <td> {{ $myorder -> oname }}</td>
                                     <td>{{ date("Y-m-d h:i:s",$myorder -> ordertime) }}</td>
                                     <td class = "state">
                                         @if($myorder -> state == 0)

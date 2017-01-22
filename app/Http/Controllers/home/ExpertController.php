@@ -254,9 +254,10 @@ class ExpertController extends Controller
       -> leftJoin('hkyl_user As c2','c2.id','=','c1.uid')
       -> select('c1.*','c2.uname as uname','c2.headurl as headurl') 
       -> where('c1.zjid',$id) 
+      -> where('c1.type',0)
       -> orderBy('c1.messtime','DESC') 
       -> paginate(4);
-      $co = DB::table('hkyl_message') -> where('zjid',$id) ->count();
+      $co = DB::table('hkyl_message') -> where('zjid',$id) -> where('type',0)->count();
       $pj = DB::table('hkyl_appraise As c1')
       -> leftJoin('hkyl_user As c2','c2.id','=','c1.uid')
       -> select('c1.*','c2.uname as uname','c2.headurl as headurl') 
@@ -309,6 +310,38 @@ class ExpertController extends Controller
       }
      
     }
+     public function messagehf(Request $request)
+    {
+
+      $data=$request->except('_token');
+
+      if(empty($data['message']))
+      {
+       return back() -> with(['kong'=>'留言不能为空!']);
+      }
+      $id = $data['zjid'];
+      unset($data['zjid']);
+      $ly =DB::table('hkyl_message') -> where('id',$id) -> first();
+      if($ly -> status == 1)
+      {
+        return back() -> with(['zjhfd'=>'不能多次回复!']);
+      }
+      $mess['status'] = 1;
+      $xgm = DB::table('hkyl_message') -> where('id',$id) -> update($mess);
+      $data['uid'] = $ly -> uid;
+      $data['type'] = 1;
+      $data['messtime'] = time();
+      $data['zjid'] = session('user') -> id;
+      $res = DB::table('hkyl_message') -> insert($data);
+      if($res)
+      {
+        return redirect('/expert/detail/'.$data['zjid'])->with(['zjhf'=>'数据添加成功']);
+      }else
+      {
+        return back() -> with(['zjhfs'=>'留言失败']);
+      }
+     
+    }
     public function wenzang($id)
     {
       $wzid = $id;
@@ -342,7 +375,7 @@ class ExpertController extends Controller
       -> where('zjid',$wzid) 
       -> orderBy('time','DESC') 
       -> paginate(4);
-      $con = DB::table('hkyl_appraise') -> where('zjid',$wzid) -> count();
+      $con = DB::table('hkyl_appraise') -> where('zjid',$wzid) -> where('type',2) -> count();
      if(empty(session('user')))
      {
        return view('home.expert.wenzang',['set' => $set,'pj'=>$pj,'con'=>$con,'zc'=>$zc,'num'=>$num,'qiye'=>$qiye,'wz'=>$wz,'user'=>$user,'cate'=>$cate,'huiyi'=>$huiyi,'yangsheng'=>$yangsheng,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'keshi' => $keshi,'xuanzhe' => $xuanzhe]);

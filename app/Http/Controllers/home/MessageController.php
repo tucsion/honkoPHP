@@ -72,7 +72,7 @@ class MessageController extends Controller
       -> where('c1.type','!=',3)
       -> orderBy('messtime','desc')
       -> paginate(5);
-
+      
       return view('home.message.myword',['set' => $set,'qiye'=>$qiye,'word'=>$word,'huiyi'=>$huiyi,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'yangsheng'=>$yangsheng,'xuanzhe' => $xuanzhe]); 
     }
     public function mywordxq(Request $request)
@@ -158,8 +158,45 @@ class MessageController extends Controller
 
       $uid = session('user') -> id;
       $bl = DB::table('hkyl_disease') -> where('uid',$uid) -> get();
-      
-      return view('home.message.zixun',['set' => $set,'qiye'=>$qiye,'bl'=>$bl,'huiyi'=>$huiyi,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'yangsheng'=>$yangsheng,'xuanzhe' => $xuanzhe]);  
+       $zixun = DB::table('hkyl_zixun As c1')
+      -> leftJoin('hkyl_disease As c2','c2.id','=','c1.bid')
+      -> leftJoin('hkyl_user As c3','c3.id','=','c1.zjid')
+      -> select('c2.*','c3.*','c1.*','c1.id as id') 
+      -> where('c1.uid',$uid) 
+      -> where('c1.type',1) 
+      -> orderBy('c1.zxtime','DESC')
+      -> orderBy('c1.state')
+      -> paginate(5);
+     
+      return view('home.message.zixun',['set' => $set,'qiye'=>$qiye,'bl'=>$bl,'zixun'=>$zixun,'huiyi'=>$huiyi,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'yangsheng'=>$yangsheng,'xuanzhe' => $xuanzhe]);  
+    }
+    public function huifu()
+    {
+      //查询所有分类
+      $set = DB::table('hkyl_set') -> first();
+      $expert = DB::table('hkyl_cate') -> where('pid','=','2') -> orderBy('id') -> get() ;
+      $train = DB::table('hkyl_cate') -> where('pid','=','3') -> orderBy('id') -> get();
+      $ys = DB::table('hkyl_cate') -> where('pid','=','4') -> orderBy('id') -> get();
+      $hickey = DB::table('hkyl_cate') -> where('pid','=','5') -> orderBy('id') -> get();
+      $procure = DB::table('hkyl_cate') -> where('pid','=','8') -> orderBy('id') -> get();
+      $goods = DB::table('hkyl_cate') -> where('pid','=','9') -> orderBy('id') -> get();
+      $health = DB::table('hkyl_cate') -> where('pid','=','11') -> orderBy('id') -> get();
+      $jiaoyu = DB::table('hkyl_cate') -> where('pid','=','3') -> orderBy('id') -> first();
+      $yangsheng = DB::table('hkyl_cate') -> where('pid','=','4') -> orderBy('id') -> first();
+      $qiye = DB::table('hkyl_cate') -> where('pid','=','8') -> orderBy('id') -> first();
+      $huiyi = DB::table('hkyl_cate') -> where('pid','=','11') -> orderBy('id') -> first();
+      $xuanzhe = 1;
+
+      $uid = session('user') -> id;
+      $zixun = DB::table('hkyl_zixun As c1')
+      -> leftJoin('hkyl_disease As c2','c2.id','=','c1.bid')
+      -> select('c1.*','c2.*','c1.id as id') 
+      -> where('c1.zjid',$uid) 
+      -> where('c1.type',0) 
+      -> orderBy('c1.zxtime','DESC')
+      -> paginate(5);
+      $zj = DB::table('hkyl_user') -> where('id',$uid) -> first();
+      return view('home.message.huifu',['set' => $set,'qiye'=>$qiye,'zixun'=>$zixun,'zj'=>$zj,'huiyi'=>$huiyi,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'yangsheng'=>$yangsheng,'xuanzhe' => $xuanzhe]);  
     }
 }
 

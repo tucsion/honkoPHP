@@ -7,6 +7,11 @@
 <style>
     {{ date_default_timezone_set('PRC') }} 
 </style> 
+@if(session('pjzj'))
+	<script type="text/javascript">
+		alert('评价成功');
+	</script>
+@endif
 <script src=" {{ url('http://libs.baidu.com/jquery/1.8.0/jquery.min.js') }}"></script>
 <link rel="stylesheet" href="{{ url('/home/css/member.css') }}">
 <div class="headTitle">服务订单</div>
@@ -74,6 +79,18 @@
 				<td>
 				@if($server -> state == 0)
 					<a href="{{ url('/order/serveqr')}}/{{$server -> id}}">去付款</a> |
+				@endif
+				@if($server -> state == 1 and $server -> type == 0)
+					<a href="{{ url('/record/chat')}}/{{$server -> illid}}/{{$server -> zjid}}">去咨询</a> |
+				@if($server -> pjstate == 0)
+					<a href="{{ url('/record/pj')}}/{{$server -> id}}">去评价</a> |
+				@endif
+				@endif
+				@if($server -> state == 1 and $server -> type == 1)
+				@if($server -> pjstate == 0)
+					<a href="{{ url('/record/pjwz')}}/{{$server -> id}}">去评价</a> |
+				@endif
+				
 				@endif
 					<a href="javascript:void(0);" filterID='10' class="delBtn" id="{{ $server -> id}}">删除</a> |
 					<a href="{{ url('/order/servexq')}}/{{$server -> id}}" target="_blank">查看</a>

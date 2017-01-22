@@ -69,6 +69,9 @@ Route::resource('/admin/cate','Admin\Catecontroller');
 
 //信息管理
 Route::resource('/admin/keshi','Admin\Keshicontroller');
+Route::resource('/admin/xitong','Admin\Xitongcontroller');
+Route::get('/admin/xitong/edit/{id}','Admin\Goodscontroller@editxt');
+Route::post('/admin/xitong/updatext','Admin\Goodscontroller@updatext');
 
 
 
@@ -215,6 +218,7 @@ Route::get('/expert/detail/{id}', 'Home\ExpertController@detail');
 Route::get('/expert/zixun/{id}','Home\Expertcontroller@zixun');
 Route::post('/expert/doliuyan','Home\Expertcontroller@doliuyan');
 Route::post('/expert/message','Home\Expertcontroller@message');
+Route::post('/expert/messagehf','Home\Expertcontroller@messagehf');
 Route::get('/expert/wenzang/{id}','Home\Expertcontroller@wenzang');
 Route::get('/expert/wzsc/{id}','Home\Expertcontroller@wzsc');
 Route::get('/expert/zjsc/{id}','Home\Expertcontroller@zjsc');
@@ -296,7 +300,13 @@ Route::post('/purch/caigou','Home\PurchController@caigou');
 Route::get('/purch/index','Home\PurchController@index');
 Route::post('/purch/delete','Home\PurchController@delete');
 Route::get('/purch/add','Home\PurchController@add');
-
+Route::get('/purch/cg','Home\PurchController@cg');
+Route::post('/purch/del','Home\PurchController@del');
+Route::get('/purch/cgxq/{id}','Home\PurchController@cgxq');
+Route::post('/purch/qysc','Home\PurchController@qysc');
+Route::get('purch/sc','Home\PurchController@sc');
+Route::post('/purch/deletegoods','Home\PurchController@deletegoods');
+Route::get('/purch/ajax','Home\PurchController@ajax');
 //认证管理
 Route::get('/home/user/rz','Home\UserController@rz');
 Route::post('/home/user/rzadd','Home\UserController@rzadd');
@@ -395,7 +405,24 @@ Route::get('/message/deal','Home\MessageController@deal');
 Route::post('/message/dealxq','Home\MessageController@dealxq');
 Route::post('/message/deletedeal','Home\MessageController@deletedeal');
 Route::get('/message/zixun','Home\MessageController@zixun');
+Route::get('/message/huifu','Home\MessageController@huifu');
 
+//咨询专家
+Route::get('/record/chat/{illid}/{zjid}','Home\RecordController@chat');
+Route::post('/record/zixun','Home\RecordController@zixun');
+Route::get('/record/ajax/{illid}/{zjid}','Home\RecordController@ajax');
+Route::get('/record/ajaxzj/{illid}/{zjid}','Home\RecordController@ajaxzj');
+Route::post('/record/huifu','Home\RecordController@huifu');
+Route::get('/record/ajaxhf','Home\RecordController@ajaxhf');
+Route::get('/record/ajaxzx','Home\RecordController@ajaxzx');
+Route::get('/record/chatzj/{illid}/{zjid}','Home\RecordController@chatzj');
+//评价
+Route::get('/record/pj/{id}','Home\RecordController@pj');
+Route::post('/record/pjtj','Home\RecordController@pjtj');
+Route::get('/record/pjwz/{id}','Home\RecordController@pjwz');
+Route::post('/record/wztj','Home\RecordController@wztj');
+Route::get('/record/goodspj/{id}','Home\RecordController@goodspj');
+Route::post('/record/goodstj','Home\RecordController@goodstj');
 //专家登录
 Route::get('/home/zjuser/index','Home\ZjuserController@index');
 

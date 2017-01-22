@@ -59,7 +59,7 @@
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
-            <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <a href="" class="sidebar-toggle" data-toggle="offcanvas" role="button">
                 <span class="sr-only">Toggle navigation</span>
             </a>
             <div class="navbar-custom-menu">
@@ -82,7 +82,7 @@
                                 <img src="{{ url('/admin/moban/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                                 <p>
                                     Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    <small>Member since Nov. {{date('Y',time())}}</small>
                                 </p>
                             </li>
                             <!-- Menu Body -->
@@ -99,9 +99,7 @@
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
-                    <li>
-                        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>
+                 
                 </ul>
             </div>
         </nav>
@@ -172,6 +170,8 @@
                     </a>
                     <ul class="treeview-menu">
                         <li><a href="{{ url('/admin/keshi') }}"><i class="fa fa-circle-o"></i> 科室管理</a></li>
+                   
+                    <li><a href="{{ url('/admin/xitong') }}"><i class="fa fa-circle-o"></i> 系统消息</a></li>
                         
                         
                         
@@ -219,7 +219,6 @@
                         <li><a href="{{ url('/admin/patient/index')}}"><i class="fa fa-circle-o"></i>患者管理</a></li>
                         <li><a href="{{ url('/admin/expert/index') }}"><i class="fa fa-circle-o"></i>专家管理</a></li>
                         <li><a href="{{ url('/admin/firm/index')}}"><i class="fa fa-circle-o"></i>企业管理</a></li>
-                        <li><a href="{{ url('/admin/member/message')}}"><i class="fa fa-circle-o"></i>权限管理</a></li>
                     </ul>
                 </li>
                 <li class="treeview">
@@ -288,13 +287,7 @@
     </aside>
 
    @yield('content')
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            <b>Version</b> 2.3.0
-        </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights
-        reserved.
-    </footer>
+    
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
@@ -393,7 +386,6 @@
 <script src="{{ url('/admin/moban/bootstrap/js/bootstrap.min.js') }}"></script>
 <!-- Morris.js charts -->
 <script src="{{ url('/admin/moban/bootstrap/js/raphael-min.js') }}"></script>
-<script src="{{ url('/admin/moban/plugins/morris/morris.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ url('/admin/moban/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
 <!-- jvectormap -->

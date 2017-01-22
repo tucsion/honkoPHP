@@ -146,9 +146,6 @@
 										<span class="title"></span>
 										<span class="time">{{ date('Y-m-d',$pingjia -> time)}}</span>
 									</p>
-									<p class="tags">
-										<span>就诊费用：不公开</span>
-									</p>
 									<p class="description">
 										{{$pingjia -> content}}
 									</p>

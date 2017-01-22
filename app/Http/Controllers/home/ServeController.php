@@ -58,11 +58,12 @@ class ServeController extends Controller
       $xuanzhe = 1;
 
       $id = session('user') -> id;
-      $serve = DB::table('hkyl_myserve')
-      -> where('uid',$id)  
-      -> orderBy('id')
-      -> paginate(5);
-      
+      $serve = DB::table('hkyl_myserve As c1')
+      -> leftJoin('hkyl_servexq As c2','c2.servenum','=','c1.servenum')
+      -> select('c1.*','c2.*','c1.id as id')
+      -> where('c1.uid',$id)  
+      -> orderBy('c1.id')
+      -> paginate(10);
       return view('home.order.serve',['set' => $set,'qiye'=>$qiye,'huiyi'=>$huiyi,'serve'=>$serve,'yangsheng'=>$yangsheng,'expert' => $expert,'jiaoyu'=>$jiaoyu,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'xuanzhe' => $xuanzhe]);
     } 
     

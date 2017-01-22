@@ -40,7 +40,10 @@ class VerifyCsrfToken extends BaseVerifier
          '/home/tuisong/deletegz',
         '/home/tuisong/follow',
         '/assets/delete',
-        '/purch/delete'
+        '/purch/delete',
+        '/purch/del',
+        '/purch/qysc',
+        '/purch/deletegoods'
         
         
     ];

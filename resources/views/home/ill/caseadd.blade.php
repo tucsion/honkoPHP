@@ -262,7 +262,7 @@
 
 		//上传检查报告
 		layui.upload({
-			url: '/ill/img',
+			url: "{{ url('/ill/img')}}",
 			elem: '#jiancha', //指定原始元素，默认直接查找class="layui-upload-file"
 			method: 'post', //上传接口的http类型
 			success: function(res){ //上传成功后的回调

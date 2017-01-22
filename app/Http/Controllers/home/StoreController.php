@@ -379,7 +379,7 @@ class StoreController extends Controller
       
       return view('home.store.goodlist',['set' => $set,'sort'=>$sort,'range'=>$range,'i'=>$i,'rank'=>$rank,'qiye'=>$qiye,'huiyi'=>$huiyi,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'scope'=>$scope,'keshi' => $keshi,'yangsheng'=>$yangsheng,'xuanzhe' => $xuanzhe,'res'=>$res]);
       }
-        public function detail($id)
+    public function detail($id)
     {   
       //查询所有分类
       $set = DB::table('hkyl_set') -> first();
@@ -418,8 +418,14 @@ class StoreController extends Controller
         }
        
       }
-
-      return view('home.store.detail',['set' => $set,'scope'=>$scope,'gxq'=>$gxq,'xq'=>$xq,'qiye'=>$qiye,'huiyi'=>$huiyi,'yangsheng'=>$yangsheng,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'keshi' => $keshi,'xuanzhe' => $xuanzhe]);
+      $con = DB::table('hkyl_appraise') -> where('zjid',$id) -> where('type',1) -> count();
+      $pingjia = DB::table('hkyl_appraise As c1')
+      -> LeftJoin('hkyl_user As c2','c2.id','=','c1.uid')
+      -> select('c1.*','c2.*')
+       -> where('zjid',$id) 
+       -> where('type',1) 
+       -> paginate(5);
+      return view('home.store.detail',['set' => $set,'scope'=>$scope,'gxq'=>$gxq,'pingjia'=>$pingjia,'con'=>$con,'xq'=>$xq,'qiye'=>$qiye,'huiyi'=>$huiyi,'yangsheng'=>$yangsheng,'jiaoyu'=>$jiaoyu,'expert' => $expert,'train' => $train,'ys' => $ys,'hickey'=>$hickey,'procure'=>$procure,'goods'=>$goods,'health'=>$health,'keshi' => $keshi,'xuanzhe' => $xuanzhe]);
     }
     public function goodscar(Request $request)
     {

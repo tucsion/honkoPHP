@@ -5,6 +5,7 @@
 </script>
 
 <link rel="stylesheet" href="{{ url('/home/css/shop_detail.css') }}">
+<link rel="stylesheet" href="{{ url('/home/css/expert_detail.css') }}">
 	<!-- 位置导航 -->
 	<div class="location container">
 		<span class="layui-breadcrumb">
@@ -136,7 +137,36 @@
 						{!! $xq -> parameter !!}
 					</div>
 					<div class="layui-tab-item">
-						客户评价
+						<p class="num">
+							<i class="layui-icon">&#xe63a;</i> 共有<span>{{$con}}</span>条网友评价
+						</p>
+						<ul class="evaluate">
+						@foreach($pingjia as $pj)
+							<li>
+								<div class="face">
+									<img src="{{ url('/updates')}}/{{$pj -> headurl}}" alt="">
+									<span class="name">{{$pj -> uname}}</span>
+								</div>
+								<div class="content">
+									<p class="title">
+										<span class="time">{{date('Y-m-d H:i:s',$pj -> time)}}</span>
+									</p>
+									<p class="description">
+										{{$pj -> content}}
+									</p>
+
+								</div>
+								
+							</li>
+						@endforeach	
+						
+						</ul>
+						<!-- 分页 -->
+						<div class="page">
+							<ul>
+								
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>      

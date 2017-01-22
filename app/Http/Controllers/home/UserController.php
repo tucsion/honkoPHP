@@ -355,9 +355,10 @@ class UserController extends Controller
     }
     public function ajaxupdate()
     {
+      $uid = session('user') -> id;
       $res = DB::table('hkyl_winmsd') -> where('wstate','0') -> first();
-      $aa = DB::table('hkyl_mynews') -> where('newsstate','0') -> first();
-      $ly = DB::table('hkyl_message') -> where('state','0') -> first();
+      $aa = DB::table('hkyl_mynews') -> where('newsstate','0')  ->where('uid',$uid) -> first();
+      $ly = DB::table('hkyl_message') -> where('state','0')  ->where('uid',$uid) -> first();
       if($aa)
       {
         if($res)

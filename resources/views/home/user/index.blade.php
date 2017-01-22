@@ -103,7 +103,7 @@
 						@endif
 					</td>
 					<td>
-						<a href="{{ url('/order/orderxq')}}/{{$order -> id}}" id="character">查看</a>
+						<a href="{{ url('/order/goodsxq')}}/{{$order -> id}}" id="character">查看</a>
 					</td>
 				</tr>
 			@endforeach

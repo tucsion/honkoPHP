@@ -14,6 +14,21 @@
 		alert('您还没有登录');
 </script>
 @endif
+@if(session('zjhfd'))
+<script type="text/javascript">
+		alert('不能多次回复');
+</script>
+@endif
+@if(session('zjhf'))
+<script type="text/javascript">
+		alert('回复成功');
+</script>
+@endif
+@if(session('zjhfs'))
+<script type="text/javascript">
+		alert('回复失败');
+</script>
+@endif
 @if(session('utp'))
 <script type="text/javascript">
 		alert('请已患者身份登录');
@@ -149,10 +164,16 @@
 								<div class="content">
 									{{ $ly -> message }}
 								</div>
+							@if(!empty(session('user')) and session('user')->id == $id)
+							<div style="text-align: right;">
+							<button class="expert_btn1" id='{{$ly -> id}}'>快速回复</button>
+							</div>
+							@endif
 							</dd>
+
 						@endforeach
 						@endif
-												<div class="page">
+						<div class="page">
 							<ul>
 								{!! $message->links() !!}
 							</ul>
@@ -353,6 +374,25 @@
 		@endif
 		</ul>
 	</div>
+	
+	<div id="guest" style="display: none;">
+	
+	
+	
+		<form action="{{ url('/expert/messagehf')}}"  method="post">
+		{{ csrf_field() }}
+			<div class="layui-form-item">
+				<textarea name="message" placeholder="请输入内容" class="layui-textarea"></textarea>
+				<input type="hidden" id="zjid" name='zjid' value=''></input>
+			</div>
+			<div class="layui-form-item">
+				<button class="layui-btn" class="guestBtn" lay-submit lay-filter="formDemo">提交留言</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</div>
+		</form>
+	
+	</div>
+	
 <script type="text/javascript" src="{{ url('/home/layui/layui.js') }}"></script>
 <script type="text/javascript">
 		layui.use('element');

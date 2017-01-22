@@ -10,7 +10,9 @@
 	<!-- Banner -->
 	<div id="banner">
 		<div id="slider">
-			<a href="#"><img src="{{ url('/home/images/banner2.jpg') }}"></a>
+		@foreach($lunbo as $lb)
+			<a href="#"><img src="{{ url('/updates') }}/{{$lb -> pic}}"></a>
+		@endforeach
 			<a href="#"><img src="{{ url('/home/images/banner3.jpg') }}"></a>
 			<a href="#"><img src="{{ url('/home/images/banner4.jpg') }}"></a>
 			<a href="#"><img src="{{ url('/home/images/banner5.jpg') }}"></a>

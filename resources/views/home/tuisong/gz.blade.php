@@ -44,10 +44,11 @@
 				</p>
 			</div>
 			<div class="tools transition">
+				<a class="layui-btn layui-btn-primary layui-btn-mini" href="{{url('/record/chatzj')}}/{{$guanzhu -> bid}}/{{$guanzhu -> zjid}}">聊天记录 <i class="layui-icon">&#xe602;</i></a>
 				<button class="layui-btn layui-btn-mini layui-btn-primary delBtn" id='{{$guanzhu -> id}}'title="删除">
 					<i class="layui-icon">&#xe640;</i>
 				</button>
-				<a href="{{url('/home/tuisong/blxq')}}/{{$guanzhu -> id}}" target="_blank" class="layui-btn layui-btn-mini layui-btn-primary" title="查看病例信息">
+				<a href="{{url('/home/tuisong/blxq')}}/{{$guanzhu -> bid}}" target="_blank" class="layui-btn layui-btn-mini layui-btn-primary" title="查看病例信息">
 					<i class="layui-icon">&#xe64c;</i>
 				</a>
 			</div>

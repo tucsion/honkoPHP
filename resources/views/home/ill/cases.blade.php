@@ -82,7 +82,7 @@
 		var index = layer.open({
 			type: 2,
 			title : '新增病历',
-			content: '/ill/caseadd',
+			content: "{{ url('/ill/caseadd')}}",
 			area: ['320px', '640px'],
 			maxmin: false,
 			scrollbar:true
@@ -92,7 +92,7 @@
 	//查看病例信息
 	$('.showBtn').on('click', function() {
 		var id = $(this).attr('id');
-		$.post('/ill/casexq', {'id':id}, function(str){
+		$.post("{{ url('/ill/casexq')}}", {'id':id}, function(str){
 		  layer.open({
 		  	type: 1,
 		  	title : '查看病历信息',
@@ -113,7 +113,7 @@
 		var index = layer.open({
 			type: 2,
 			title : '修改病历',
-			content: '/ill/caseedit/'+id,
+			content: "{{ url('/ill/caseedit')}}/"+id,
 			area: ['320px', '640px'],
 			maxmin: false,
 			scrollbar:true
@@ -135,7 +135,7 @@
 			// });
 
 			$.ajax({
-				url : '/ill/casedel',
+				url : "{{ url('/ill/casedel')}}",
 				data : {'id':id},
 				type : 'post',
 				success : function(data){

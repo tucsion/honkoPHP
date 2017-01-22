@@ -16,7 +16,11 @@
 </script>
 @endif
 	
-
+@if(session('pjzj'))
+<script type="text/javascript">
+		alert('评价成功');
+</script>
+@endif
 
 <div class="headTitle">商城订单</div>
 <div class="order">
@@ -84,6 +88,10 @@
 				<td>
 				@if($order -> state == 0)
 					<a href="{{ url('/order/queren')}}/{{$order -> id}}">去付款</a> |
+
+				@endif
+				@if($order -> pjstate == 0  and $order -> state != 0)
+					<a href="{{ url('/record/goodspj')}}/{{$order -> id}}">去评价</a> |
 				@endif
 					<a href="javascript:void(0);" filterID='10' class="delBtn" id="{{ $order -> id}}">删除</a> |
 					<a href="{{ url('/order/goodsxq')}}/{{$order -> id}}" target="_blank">查看</a>

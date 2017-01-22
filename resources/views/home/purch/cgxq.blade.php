@@ -1,7 +1,7 @@
 @extends('home.layer')
 @section('center')
 <script type="text/javascript">
-    document.title='康复社-会员中心-未完成采购单';
+    document.title='康复社-会员中心-采购单详情';
 </script>
 
 <style>
@@ -14,7 +14,7 @@
 @endif
 <script src=" {{ url('http://libs.baidu.com/jquery/1.8.0/jquery.min.js') }}"></script>
 <link rel="stylesheet" href="{{ url('/home/css/member.css') }}">
-<div class="headTitle">未完成采购单</div>
+<div class="headTitle">采购单详情</div>
 <div class="order">
 	<table id="order" class="layui-table" lay-skin="line">
 		<thead>
@@ -27,37 +27,23 @@
 		</thead>
 		<tbody>
 
-		@if(empty($count))
-			<tr>
-			<td>暂无采购订单</td>
-			</tr>
-		@endif
-		@foreach($purch as $pur)
+		@foreach($cgxq as $cg)
 			<tr>
 			
 				<td>
-					{{$pur -> hname}}
-					<img src="{{url('/updates')}}/{{$pur -> img}}" style="width:150px;height:150px;">
+					{{$cg -> hname}}
+					<img src="{{url('/updates')}}/{{$cg -> img}}" style="width:150px;height:150px;">
 				</td>
-				<td>{{date("Y-m-d H:i:s",$pur -> purtime)}}</td>
-				<td>{{$pur -> number}}</td>
+				<td>{{date("Y-m-d H:i:s",$purch -> cgtime)}}</td>
+				<td>{{$cg -> number}}</td>
 				<td>
-					<a href="javascript:void(0);" filterID='10' class="delBtn" id="{{ $pur -> id}}">删除</a> |
-					<a href="{{ url('/hickey/detail')}}/{{$pur -> gid}}" target="_blank">查看</a>
+					<a href="javascript:void(0);" filterID='10' class="delBtn" id="{{ $cg -> gid}}">收藏</a> |
+					<a href="{{ url('/hickey/detail')}}/{{$cg -> gid}}" target="_blank">查看</a>
 				</td>
 			</tr>
 		@endforeach	
 		</tbody>
 	</table>
-	<div style="text-align: right;">
-			<a href="{{ url('/hickey/index')}}" >继续采购</a> ||
-			@if($count)
-			<a href="{{ url('/purch/add')}}" >生成采购单</a>
-			@endif
-	</div>
-	<div class="page" >
-			{!!$purch -> links() !!}
-	</div>
 
 </div>
 </div>
@@ -71,17 +57,16 @@
 		var delTr = $(this).parents('tr');
 		// alert(delTr);
 		var id = $(this).attr('id');
-		layer.confirm('删除操作不可撤销！<br />同时会删除分类下面的病历！', {
-			btn: ['删除','算了']
+		layer.confirm('您确定收藏该商品么？', {
+			btn: ['收藏','算了']
 		},function(){//确认
 			$.ajax({
-				url : '/purch/delete',
+				url : '/purch/qysc',
 				data : {'id':id},
 				type : 'post',
 				success : function(data){
 					
 					if (data.status == 1) {
-						delTr.remove();
 						layer.msg(data.msg);
 					}else{
 						layer.msg(data.msg);

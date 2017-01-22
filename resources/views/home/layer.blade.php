@@ -192,7 +192,7 @@
                 <dt class="headTitle">消息中心</dt>
                 <dd><a href="{{url('/message/xitong')}}" ><i class="layui-icon">&#xe623;</i>&nbsp;系统消息&nbsp;<small id='winmsd' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
                 <dd><a href="{{url('/message/deal')}}"><i class="layui-icon">&#xe623;</i>&nbsp;交易提醒&nbsp;<small id='deal' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
-                <dd><a href="{{url('/message/zixun')}}"><i class="layui-icon">&#xe623;</i> 专家回复</a></dd>
+                <dd><a href="{{url('/message/zixun')}}"><i class="layui-icon">&#xe623;</i>&nbsp;专家回复&nbsp;<small id='zixun' style="color:red; display:none;float: right;margin-right: 10px;">新</small>
                 <dd><a  href="{{url('/message/myword')}}"><i class="layui-icon">&#xe623;</i>&nbsp;我的留言&nbsp;<small id='myword' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
             </dl>
         @endif
@@ -232,7 +232,7 @@
             <dl>
                 <dt class="headTitle">消息中心</dt>
                 <dd><a href="{{url('/message/xitong')}}" ><i class="layui-icon">&#xe623;</i>&nbsp;系统消息&nbsp;<small id='winmsd' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
-                <dd><a href="{{url('/message/deal')}}"><i class="layui-icon">&#xe623;</i>&nbsp;患者交流&nbsp;<small id='deal' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
+                <dd><a href="{{url('/message/huifu')}}"><i class="layui-icon">&#xe623;</i>&nbsp;患者交流&nbsp;<small id='huifu' style="color:red; display:none;float: right;margin-right: 10px;">新</small></a></dd>
             </dl>
         @endif
         @if(session('user') -> utp == 3)
@@ -243,8 +243,8 @@
         </dl>
         <dl>
                 <dt class="headTitle">采购单管理</dt>
-                <dd><a href="{{url('/home/user/base')}}"><i class="layui-icon">&#xe623;</i> 历史采购单</a></dd>
-                <dd><a href="{{url('/home/user/address')}}"><i class="layui-icon">&#xe623;</i> 收藏的商品</a></dd>
+                <dd><a href="{{url('/purch/cg')}}"><i class="layui-icon">&#xe623;</i> 历史采购单</a></dd>
+                <dd><a href="{{url('/purch/sc')}}"><i class="layui-icon">&#xe623;</i> 收藏的商品</a></dd>
                 <dd><a href="{{url('/purch/index')}}" ><i class="layui-icon">&#xe623;</i> 未完成采购单</a></dd>
                 <dd><a href="{{url('/home/user/bill')}}" ><i class="layui-icon">&#xe623;</i> 发票管理</a></dd>
         </dl>
@@ -393,8 +393,64 @@
         }
     });
     </script>
+    <script type="text/javascript">
+        $(function(){
+        setInterval(aa,10000);
+        function aa()
+        {
+        $.ajax({
+                url : '{{url('/record/ajaxzx')}}',
+                async:false,
+                type : 'get',
+                dataType : 'json',
+                success : function(res){
+                            if(res.status == 1)
+                            {
+                                
+                                var zixun = document.getElementById('zixun');
+                                zixun.style.display = 'block';
+                            }
+                            if(res.status == 0)
+                            {
+                                 var zixun = document.getElementById('zixun');
+                                zixun.style.display = 'none';
+                            }
+                        }
+
+        });
+        }
+    });
+    </script>
     @endif
     @if(session('user') -> utp == 2)
+    <script type="text/javascript">
+        $(function(){
+        setInterval(aa,10000);
+        function aa()
+        {
+        $.ajax({
+                url : '{{url('/purch/ajax')}}',
+                async:false,
+                type : 'get',
+                dataType : 'json',
+                success : function(res){
+                            if(res.status == 1)
+                            {
+                                
+                                var winmsd = document.getElementById('winmsd');
+                                winmsd.style.display = 'block';
+                            }
+                            if(res.status == 0)
+                            {
+                                 var winmsd = document.getElementById('winmsd');
+                                winmsd.style.display = 'none';
+                            }
+                        }
+
+        });
+        }
+    });
+    </script>
     <script type="text/javascript">
         $(function(){
         setInterval(aa,10000);
@@ -416,6 +472,65 @@
                             {
                                  var tuisong = document.getElementById('tuisong');
                                 tuisong.style.display = 'none';
+                            }
+                        }
+
+        });
+        }
+    });
+
+    </script>
+        <script type="text/javascript">
+        $(function(){
+        setInterval(aa,10000);
+        function aa()
+        {
+        $.ajax({
+                url : '{{url('/record/ajaxhf')}}',
+                async:false,
+                type : 'get',
+                dataType : 'json',
+                success : function(res){
+                            if(res.status == 1)
+                            {
+                                
+                                var huifu = document.getElementById('huifu');
+                                huifu.style.display = 'block';
+                            }
+                            if(res.status == 0)
+                            {
+                                 var huifu = document.getElementById('huifu');
+                                huifu.style.display = 'none';
+                            }
+                        }
+
+        });
+        }
+    });
+    </script>
+    @endif
+    @if(session('user') -> utp == 3)
+    <script type="text/javascript">
+        $(function(){
+        setInterval(aa,10000);
+        function aa()
+        {
+        $.ajax({
+                url : '{{url('/purch/ajax')}}',
+                async:false,
+                type : 'get',
+                dataType : 'json',
+                success : function(res){
+                            if(res.status == 1)
+                            {
+                                
+                                var winmsd = document.getElementById('winmsd');
+                                winmsd.style.display = 'block';
+                            }
+                            if(res.status == 0)
+                            {
+                                 var winmsd = document.getElementById('winmsd');
+                                winmsd.style.display = 'none';
                             }
                         }
 

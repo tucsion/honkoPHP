@@ -12,10 +12,10 @@ class MydealController extends Controller
     public function index(Request $request)
     {
     	 
-    	$data = DB::table('hkyl_mydeal') 
-        -> select('hkyl_mydeal.*','hkyl_user.relname As dname','hkyl_user.phone As phone ')
-        -> Leftjoin('hkyl_user','hkyl_mydeal.uid','=','hkyl_user.id')
-    	-> where ('dnumber' , 'like','%'.$request -> input('keywords').'%')
+    	$data = DB::table('hkyl_draw') 
+        -> select('hkyl_draw.*','hkyl_user.relname As dname','hkyl_user.phone As phone ')
+        -> Leftjoin('hkyl_user','hkyl_draw.zjid','=','hkyl_user.id')
+    	-> where ('drawnum' , 'like','%'.$request -> input('keywords').'%')
     	-> paginate($request -> input('num',10));
 
        
