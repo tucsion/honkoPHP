@@ -17,116 +17,116 @@
 Route::group(['middleware' => 'login'],function(){
 
 //后台首页
-Route::get('/admin/index','Admin\Indexcontroller@index');
+Route::get('/admin/index','Admin\IndexController@index');
 
 
 //基本信息管理
-Route::get('/admin/set','Admin\Setcontroller@index');
+Route::get('/admin/set','Admin\SetController@index');
 Route::post('/admin/set/update','Admin\SetController@update');
 
 
 //管理员管理
 //管理员列表
-Route::get('/admin/admin/index','Admin\Admincontroller@index');
+Route::get('/admin/admin/index','Admin\AdminController@index');
 
 //管理员添加
-Route::get('/admin/admin/add','Admin\Admincontroller@add');
-Route::post('/admin/admin/insert','Admin\Admincontroller@insert');
+Route::get('/admin/admin/add','Admin\AdminController@add');
+Route::post('/admin/admin/insert','Admin\AdminController@insert');
 
 //管理员修改
-Route::get('/admin/admin/edit/{id}','Admin\Admincontroller@edit');
-Route::post('/admin/admin/update','Admin\Admincontroller@update');
-Route::get('/admin/admin/delete/{id}','Admin\Admincontroller@delete');
+Route::get('/admin/admin/edit/{id}','Admin\AdminController@edit');
+Route::post('/admin/admin/update','Admin\AdminController@update');
+Route::get('/admin/admin/delete/{id}','Admin\AdminController@delete');
 
 //图片管理
 //轮播图管理	
-Route::get('/admin/pic/index','Admin\Picturecontroller@index');
-Route::get('/admin/pic/add','Admin\Picturecontroller@add');
-Route::post('/admin/pic/insert','Admin\Picturecontroller@insert');
+Route::get('/admin/pic/index','Admin\PictureController@index');
+Route::get('/admin/pic/add','Admin\PictureController@add');
+Route::post('/admin/pic/insert','Admin\PictureController@insert');
 Route::get('/admin/pic/edit/{id}','Admin\PictureController@edit');
 Route::post('/admin/pic/update','Admin\PictureController@update');
 Route::get('/admin/pic/delete/{id}','Admin\PictureController@delete');
 //banner图管理
-Route::get('/admin/banner/index','Admin\Bannercontroller@index');
-Route::get('/admin/banner/add','Admin\Bannercontroller@add');
-Route::post('/admin/banner/insert','Admin\Bannercontroller@insert');
+Route::get('/admin/banner/index','Admin\BannerController@index');
+Route::get('/admin/banner/add','Admin\BannerController@add');
+Route::post('/admin/banner/insert','Admin\BannerController@insert');
 Route::get('/admin/banner/edit/{id}','Admin\BannerController@edit');
 Route::post('/admin/banner/update','Admin\BannerController@update');
 Route::get('/admin/banner/delete/{id}','Admin\BannerController@delete');
 
 
 //友情链接管理
-Route::get('/admin/link/index','Admin\Linkcontroller@index');
-Route::get('/admin/link/add','Admin\Linkcontroller@add');
-Route::post('/admin/link/insert','Admin\Linkcontroller@insert');
+Route::get('/admin/link/index','Admin\LinkController@index');
+Route::get('/admin/link/add','Admin\LinkController@add');
+Route::post('/admin/link/insert','Admin\LinkController@insert');
 Route::get('/admin/link/edit/{id}','Admin\LinkController@edit');
 Route::post('/admin/link/update','Admin\LinkController@update');
 Route::get('/admin/link/delete/{id}','Admin\LinkController@delete');
 
 
 //分类管理
-Route::resource('/admin/cate','Admin\Catecontroller');
+Route::resource('/admin/cate','Admin\CateController');
 
 //信息管理
-Route::resource('/admin/keshi','Admin\Keshicontroller');
-Route::resource('/admin/xitong','Admin\Xitongcontroller');
-Route::get('/admin/xitong/edit/{id}','Admin\Goodscontroller@editxt');
-Route::post('/admin/xitong/updatext','Admin\Goodscontroller@updatext');
+Route::resource('/admin/keshi','Admin\KeshiController');
+Route::resource('/admin/xitong','Admin\XitongController');
+Route::get('/admin/xitong/edit/{id}','Admin\GoodsController@editxt');
+Route::post('/admin/xitong/updatext','Admin\GoodsController@updatext');
 
 
 
 //商品管理
 Route::get('/admin/goods/index', 'Admin\GoodsController@index');
-Route::get('/admin/goods/add','Admin\Goodscontroller@add');
-Route::post('/admin/goods/insert','Admin\Goodscontroller@insert');
+Route::get('/admin/goods/add','Admin\GoodsController@add');
+Route::post('/admin/goods/insert','Admin\GoodsController@insert');
 Route::get('/admin/goods/edit/{id}','Admin\GoodsController@edit');
 Route::post('/admin/goods/update','Admin\GoodsController@update');
 Route::get('/admin/goods/delete/{id}','Admin\GoodsController@delete');
 //器械管理
 Route::get('/admin/hickey/index', 'Admin\HickeyController@index');
-Route::get('/admin/hickey/add','Admin\Hickeycontroller@add');
-Route::post('/admin/hickey/insert','Admin\Hickeycontroller@insert');
+Route::get('/admin/hickey/add','Admin\HickeyController@add');
+Route::post('/admin/hickey/insert','Admin\HickeyController@insert');
 Route::get('/admin/hickey/edit/{id}','Admin\HickeyController@edit');
 Route::post('/admin/hickey/update','Admin\HickeyController@update');
 Route::get('/admin/hickey/delete/{id}','Admin\HickeyController@delete');
 //商品属性管理
-Route::resource('/admin/scope','Admin\Scopecontroller');
-Route::resource('/admin/vender','Admin\Vendercontroller');
-Route::resource('/admin/agent','Admin\Agentcontroller');
+Route::resource('/admin/scope','Admin\ScopeController');
+Route::resource('/admin/vender','Admin\VenderController');
+Route::resource('/admin/agent','Admin\AgentController');
 
 //文章管理
 //教育与培训
 Route::get('/admin/train/index', 'Admin\TrainController@index');
-Route::get('/admin/train/add','Admin\Traincontroller@add');
-Route::post('/admin/train/insert','Admin\Traincontroller@insert');
+Route::get('/admin/train/add','Admin\TrainController@add');
+Route::post('/admin/train/insert','Admin\TrainController@insert');
 Route::get('/admin/train/edit/{id}','Admin\TrainController@edit');
 Route::post('/admin/train/update','Admin\TrainController@update');
 Route::get('/admin/train/delete/{id}','Admin\TrainController@delete');
 //养生养老
 Route::get('/admin/health/index', 'Admin\HealthController@index');
-Route::get('/admin/health/add','Admin\Healthcontroller@add');
-Route::post('/admin/health/insert','Admin\Healthcontroller@insert');
+Route::get('/admin/health/add','Admin\HealthController@add');
+Route::post('/admin/health/insert','Admin\HealthController@insert');
 Route::get('/admin/health/edit/{id}','Admin\HealthController@edit');
 Route::post('/admin/health/update','Admin\HealthController@update');
 Route::get('/admin/health/delete/{id}','Admin\HealthController@delete');
 //企业采购
 Route::get('/admin/procure/index', 'Admin\ProcureController@index');
-Route::get('/admin/procure/add','Admin\Procurecontroller@add');
-Route::post('/admin/procure/insert','Admin\Procurecontroller@insert');
+Route::get('/admin/procure/add','Admin\ProcureController@add');
+Route::post('/admin/procure/insert','Admin\ProcureController@insert');
 Route::get('/admin/procure/edit/{id}','Admin\ProcureController@edit');
 Route::post('/admin/procure/update','Admin\ProcureController@update');
 Route::get('/admin/procure/delete/{id}','Admin\ProcureController@delete');
 //康复资讯
 Route::get('/admin/info/index', 'Admin\InfoController@index');
-Route::get('/admin/info/add','Admin\Infocontroller@add');
-Route::post('/admin/info/insert','Admin\Infocontroller@insert');
+Route::get('/admin/info/add','Admin\InfoController@add');
+Route::post('/admin/info/insert','Admin\InfoController@insert');
 Route::get('/admin/info/edit/{id}','Admin\InfoController@edit');
 Route::post('/admin/info/update','Admin\InfoController@update');
 Route::get('/admin/info/delete/{id}','Admin\InfoController@delete');
 //联系我们
 Route::get('/admin/lianxi/index', 'Admin\LianxiController@index');
-Route::get('/admin/lianxi/add','Admin\Lianxicontroller@add');
-Route::post('/admin/lianxi/insert','Admin\Lianxicontroller@insert');
+Route::get('/admin/lianxi/add','Admin\LianxiController@add');
+Route::post('/admin/lianxi/insert','Admin\LianxiController@insert');
 Route::get('/admin/lianxi/edit/{id}','Admin\LianxiController@edit');
 Route::post('/admin/lianxi/update','Admin\LianxiController@update');
 Route::get('/admin/lianxi/delete/{id}','Admin\LianxiController@delete');
@@ -138,24 +138,24 @@ Route::get('/admin/doctor/delete/{id}','Admin\DoctorController@delete');
 //会员信息管理
 //患者管理
 Route::get('/admin/patient/index', 'Admin\PatientController@index');
-Route::get('/admin/patient/add','Admin\Patientcontroller@add');
-Route::post('/admin/patient/insert','Admin\Patientcontroller@insert');
+Route::get('/admin/patient/add','Admin\PatientController@add');
+Route::post('/admin/patient/insert','Admin\PatientController@insert');
 Route::get('admin/patient/delete/{id}','Admin\PatientController@delete');
 Route::get('admin/patient/edit/{id}','Admin\PatientController@edit');
 Route::post('/admin/patient/update','Admin\PatientController@update');
 
 //专家管理
 Route::get('/admin/expert/index', 'Admin\ExpertController@index');
-Route::get('/admin/expert/add','Admin\Expertcontroller@add');
-Route::post('/admin/expert/insert','Admin\Expertcontroller@insert');
+Route::get('/admin/expert/add','Admin\ExpertController@add');
+Route::post('/admin/expert/insert','Admin\ExpertController@insert');
 Route::get('admin/expert/delete/{id}','Admin\ExpertController@delete');
 Route::get('admin/expert/edit/{id}','Admin\ExpertController@edit');
 Route::post('/admin/expert/update','Admin\ExpertController@update');
 
 //企业管理
 Route::get('/admin/firm/index', 'Admin\FirmController@index');
-Route::get('/admin/firm/add','Admin\Firmcontroller@add');
-Route::post('/admin/firm/insert','Admin\Firmcontroller@insert');
+Route::get('/admin/firm/add','Admin\FirmController@add');
+Route::post('/admin/firm/insert','Admin\FirmController@insert');
 Route::get('admin/firm/delete/{id}','Admin\FirmController@delete');
 Route::get('admin/firm/edit/{id}','Admin\FirmController@edit');
 Route::post('/admin/firm/update','Admin\FirmController@update');
@@ -215,16 +215,16 @@ Route::get('/', 'Home\IndexController@index');
 Route::get('/expert/index', 'Home\ExpertController@index');
 Route::get('/expert/zjlist/{id}', 'Home\ExpertController@zjlist');
 Route::get('/expert/detail/{id}', 'Home\ExpertController@detail');
-Route::get('/expert/zixun/{id}','Home\Expertcontroller@zixun');
-Route::post('/expert/doliuyan','Home\Expertcontroller@doliuyan');
-Route::post('/expert/message','Home\Expertcontroller@message');
-Route::post('/expert/messagehf','Home\Expertcontroller@messagehf');
-Route::get('/expert/wenzang/{id}','Home\Expertcontroller@wenzang');
-Route::get('/expert/wzsc/{id}','Home\Expertcontroller@wzsc');
-Route::get('/expert/zjsc/{id}','Home\Expertcontroller@zjsc');
-Route::get('/expert/jianjie/{id}','Home\Expertcontroller@jianjie');
-Route::get('/expert/blxz/{id}','Home\Expertcontroller@blxz');
-Route::post('/expert/serve','Home\Expertcontroller@serve');
+Route::get('/expert/zixun/{id}','Home\ExpertController@zixun');
+Route::post('/expert/doliuyan','Home\ExpertController@doliuyan');
+Route::post('/expert/message','Home\ExpertController@message');
+Route::post('/expert/messagehf','Home\ExpertController@messagehf');
+Route::get('/expert/wenzang/{id}','Home\ExpertController@wenzang');
+Route::get('/expert/wzsc/{id}','Home\ExpertController@wzsc');
+Route::get('/expert/zjsc/{id}','Home\ExpertController@zjsc');
+Route::get('/expert/jianjie/{id}','Home\ExpertController@jianjie');
+Route::get('/expert/blxz/{id}','Home\ExpertController@blxz');
+Route::post('/expert/serve','Home\ExpertController@serve');
 
 //教育与培训
 Route::get('/train/index/{id}', 'Home\TrainController@index');
@@ -243,19 +243,19 @@ Route::get('/info/index/{id}', 'Home\InfoController@index');
 Route::get('/info/detail/{id}','Home\InfoController@detail');
 
 //康复器械园
-Route::get('/hickey/index','Home\Hickeycontroller@index');
-Route::get('/hickey/qxlist/{id}','Home\Hickeycontroller@qxlist');
-Route::get('/hickey/detail/{id}','Home\Hickeycontroller@detail');
+Route::get('/hickey/index','Home\HickeyController@index');
+Route::get('/hickey/qxlist/{id}','Home\HickeyController@qxlist');
+Route::get('/hickey/detail/{id}','Home\HickeyController@detail');
 
 //网上商城
 Route::get('/store/index', 'Home\StoreController@index');
 Route::get('/store/goodlist/{id}', 'Home\StoreController@goodlist');
 Route::get('/store/detail/{id}', 'Home\StoreController@detail');
 Route::post('/store/goodscar','Home\StoreController@goodscar');
-Route::get('/expert/goodsc/{id}','Home\Storecontroller@goodsc');
+Route::get('/expert/goodsc/{id}','Home\StoreController@goodsc');
 
 //首页搜索
-Route::post('/home/find','Home\Findcontroller@find');
+Route::post('/home/find','Home\FindController@find');
 
 //联系我们
 Route::get('/contact/index/{id}','Home\ContactController@index');
