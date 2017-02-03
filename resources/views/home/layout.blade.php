@@ -46,7 +46,7 @@
                 {{ csrf_field() }}
                     <input type="text" name="find" value="">
                     <div class="btn">
-                        <i class="layui-icon"><button>&#xe615;</button></i>
+                        <button><i class="layui-icon">&#xe615;</i></button>
                     </div>
                 </form>
             </div>

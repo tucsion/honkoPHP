@@ -315,6 +315,17 @@ a:hover{
 	background-color: rgba(0, 0, 0, .1);
 }
 
+/*loading图片*/
+.loading{
+	width: 20px;
+	height: 20px;
+	border: none;
+	padding: 0;
+	float: none;
+	border-radius: 0;
+	display: none;
+}
+
 
 
 
