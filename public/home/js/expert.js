@@ -13,6 +13,7 @@ $(function(){
 		$('.expert_btn2').on('click', function(){
 			if(!user)
 			{
+<<<<<<< HEAD
 				layer.alert('还未登录，请登录',{
 					icon : 2,
 					title : '警告'
@@ -20,6 +21,10 @@ $(function(){
 					location.href = '/home/login';
 				});
 
+=======
+				
+				layer.alert('还未登录，请登录');
+>>>>>>> origin/master
 				return false;
 			}
 			var id = $(this).attr('user');
@@ -35,8 +40,16 @@ $(function(){
 
 		//免费留言
 		$('.expert_btn1').on('click', function() {
+
 			var layer = layui.layer;
 			var id = $(this).attr('id');
+			if(!user)
+			{
+				
+				layer.alert('还未登录，请登录');
+				return false;
+				
+			}
 			$('#zjid').val(id);
 			layer.open({
 

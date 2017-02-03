@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
-class MyserveController extends Controller
+class MydataController extends Controller
 {
     public function index(Request $request)
     {
@@ -16,7 +16,7 @@ class MyserveController extends Controller
         -> select('hkyl_myserve.*','hkyl_user.relname As srname','hkyl_user.phone As sphone')
         -> Leftjoin('hkyl_user','hkyl_myserve.uid','=','hkyl_user.id')
     	-> where ('servenum' , 'like','%'.$request -> input('keywords').'%')
-        -> where('type',0)
+        -> where('type',1)
     	-> paginate($request -> input('num',10));
        
     	return view('admin.myserve.index',['data' => $data,'request' => $request -> all()]);
