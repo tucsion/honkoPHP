@@ -14,7 +14,7 @@ $(function(){
 			if(!user)
 			{
 				
-				alert('还未登录，请登录');
+				layer.alert('还未登录，请登录');
 				return false;
 			}
 			var id = $(this).attr('user');
@@ -31,8 +31,16 @@ $(function(){
 
 		//免费留言
 		$('.expert_btn1').on('click', function() {
+
 			var layer = layui.layer;
 			var id = $(this).attr('id');
+			if(!user)
+			{
+				
+				layer.alert('还未登录，请登录');
+				return false;
+				
+			}
 			$('#zjid').val(id);
 			layer.open({
 

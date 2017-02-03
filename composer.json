@@ -11,7 +11,8 @@
         "overtrue/pinyin": "~3.0",
         "ignited/laravel-omnipay": "2.*",
         "lokielse/omnipay-alipay": "dev-master",
-        "latrell/alipay": "dev-master"
+        "latrell/alipay": "dev-master",
+        "houdunwang/image": "^1.0"
 
     },
     "require-dev": {

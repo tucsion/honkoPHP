@@ -88,7 +88,7 @@
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">收货人</label>
                                     <div class="col-sm-4">
-                                       <p>{{$data -> conname }}</p>
+                                       <p>{{$address -> uname }}</p>
                                     </div>
                                     <label for="inputEmail3" class="col-sm-2 control-label">收货地址</label>
                                     <div class="col-sm-4">

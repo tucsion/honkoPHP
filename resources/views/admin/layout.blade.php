@@ -99,7 +99,7 @@
                         </ul>
                     </li>
                     <!-- Control Sidebar Toggle Button -->
-                 
+                     
                 </ul>
             </div>
         </nav>
@@ -229,7 +229,8 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ url('/admin/myorder/index')}}"><i class="fa fa-circle-o"></i>商品订单</a></li>
                         <li><a href="{{ url('/admin/myserve/index')}}"><i class="fa fa-circle-o"></i>服务订单</a></li>
-                        <li><a href="{{ url('/admin/mydeal/index')}}"><i class="fa fa-circle-o"></i>提现订单</a></li>
+                        <li><a href="{{ url('/admin/mydata/index')}}"><i class="fa fa-circle-o"></i>资料订单</a></li>
+                        <li><a href="{{ url('/admin/mydeal/index')}}"><i class="fa fa-circle-o"></i>医生提现订单</a></li>
                     </ul>
                    
                 </li>

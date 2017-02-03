@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b4112bd065d65e3f9eb9f1d1c7cbac19",
-    "content-hash": "1fdf7a91b65aa10272bd5c8176eed4a4",
+    "hash": "5cbb0daeeb53a61b4568fe6b46adf436",
+    "content-hash": "1dc91176ed1011a497b0b7092fc36878",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -304,6 +304,52 @@
             ],
             "abandoned": "guzzlehttp/guzzle",
             "time": "2015-03-18 18:23:50"
+        },
+        {
+            "name": "houdunwang/image",
+            "version": "v1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/houdunwang/image.git",
+                "reference": "443a4c712557d069d431f5afe765be2423fdfc38"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/houdunwang/image/443a4c712557d069d431f5afe765be2423fdfc38.zip",
+                "reference": "443a4c712557d069d431f5afe765be2423fdfc38",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "project",
+            "autoload": {
+                "files": [],
+                "psr-4": {
+                    "houdunwang\\image\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "后盾网向军",
+                    "email": "2300071698@qq.com"
+                }
+            ],
+            "description": "图片组件提供了缩略图、水印等图像处理功能",
+            "homepage": "http://www.houdunwang.com/",
+            "keywords": [
+                "hdphp",
+                "houdunwang",
+                "image",
+                "后盾人",
+                "后盾网",
+                "后盾网向军"
+            ],
+            "time": "2017-01-06 16:46:07"
         },
         {
             "name": "ignited/laravel-omnipay",

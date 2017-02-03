@@ -175,7 +175,12 @@ Route::get('/admin/myserve/index', 'Admin\MyserveController@index');
 Route::get('admin/myserve/delete/{id}','Admin\MyserveController@delete');
 Route::get('/admin/myserve/detail/{id}', 'Admin\MyserveController@detail');
 
-//提现订单
+//会员资料订单
+Route::get('/admin/mydata/index', 'Admin\MydataController@index');
+Route::get('admin/mydata/delete/{id}','Admin\MydataController@delete');
+Route::get('/admin/mydata/detail/{id}', 'Admin\MydataController@detail');
+
+//医生提现订单
 Route::get('/admin/mydeal/index', 'Admin\MydealController@index');
 Route::get('admin/mydeal/delete/{id}','Admin\MydealController@delete');
 

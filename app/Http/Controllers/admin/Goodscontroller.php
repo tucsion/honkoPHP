@@ -32,7 +32,7 @@ class Goodscontroller extends Controller
     public function insert(Request $request)
     {
          $data = $request -> except('_token');
-        
+      
          //上传图片
         if ($request->hasFile('img'))
          {
@@ -40,13 +40,14 @@ class Goodscontroller extends Controller
          	{
          		$oldpath = $request -> file('img') -> getClientOriginalExtension();
          		$filename = time().mt_rand(100000,999999);
-         		$request -> file('img') -> move('./updates',$filename.'.'.$oldpath);
+         		$request -> file('img') -> move('./updates/goods',$filename.'.'.$oldpath);
          		
          		$data['img'] = $filename.'.'.$oldpath;
          	}
          }else{
              return back() ->with(['img'=>'商品图片未上传']);
          }
+         
          $data['issuetime'] = strtotime($data['issuetime']);
          //执行添加
          $res = DB::table('hkyl_goods') -> insert($data);

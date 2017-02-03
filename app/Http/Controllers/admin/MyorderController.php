@@ -27,8 +27,6 @@ class MyorderController extends Controller
     public function detail($id)
     {   
        
-
-
         $data = DB::table('hkyl_myorder') -> where('id',$id) ->first();
         $user = DB::table('hkyl_user') -> where('id',$data -> uid) -> first();
         $address = DB::table('hkyl_address') -> where('id',$data -> aid) ->first();
