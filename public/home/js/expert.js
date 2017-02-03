@@ -13,8 +13,13 @@ $(function(){
 		$('.expert_btn2').on('click', function(){
 			if(!user)
 			{
-				
-				alert('还未登录，请登录');
+				layer.alert('还未登录，请登录',{
+					icon : 2,
+					title : '警告'
+				},function(){
+					location.href = '/home/login';
+				});
+
 				return false;
 			}
 			var id = $(this).attr('user');
@@ -24,8 +29,7 @@ $(function(){
 				shadeClose: true, //点击遮罩关闭层
 				area : ['800px' , '520px'],
 				content: '/expert/zixun/'+id,
-				btn : ['取消'],
-				
+				btn : ['取消']
 			});
 		});
 
