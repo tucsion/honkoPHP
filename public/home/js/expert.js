@@ -1,4 +1,4 @@
-$(function(){
+﻿$(function(){
 
 	// 左边栏效果
 	$('.sideMenu > ul > li').mouseover(function() {
@@ -13,18 +13,12 @@ $(function(){
 		$('.expert_btn2').on('click', function(){
 			if(!user)
 			{
-<<<<<<< HEAD
 				layer.alert('还未登录，请登录',{
 					icon : 2,
 					title : '警告'
 				},function(){
 					location.href = '/home/login';
 				});
-
-=======
-				
-				layer.alert('还未登录，请登录');
->>>>>>> origin/master
 				return false;
 			}
 			var id = $(this).attr('user');
@@ -34,7 +28,8 @@ $(function(){
 				shadeClose: true, //点击遮罩关闭层
 				area : ['800px' , '520px'],
 				content: '/expert/zixun/'+id,
-				btn : ['取消']
+				btn : ['取消'],
+				
 			});
 		});
 

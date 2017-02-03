@@ -183,17 +183,11 @@ ul#box3 > li .img ul.sub li a:hover{
 	background-position: 20px -80px;
 	color: #98b900;
 }
-ul#box3 > li .img ul.last li a{
-	background-position: 10px -30px;
-}
-ul#box3 > li .img ul.last li a:hover{
-	background-position: 10px -80px;
-}
-ul#box3 > li .img ul.last{
+ul#box3 > li:last-child .img ul.sub{
 	width: 290px;
 	left: 46px;
 }
-ul#box3 > li .img ul.last li{
+ul#box3 > li:last-child .img ul.sub li{
 	float: left;
 	margin-right: 5px;
 }

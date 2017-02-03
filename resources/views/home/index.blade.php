@@ -6,17 +6,21 @@
 <script type="text/javascript" src="{{ url('/home/js/jquery.countup.min.js') }}"></script>
 <script type="text/javascript" src="{{ url('/home/js/vmc.slider.full.min.js') }}"></script> 
 	<script type="text/javascript" src="{{ url('/home/layui/layui.js') }}"></script>
+	
 	<!-- Banner -->
 	<div id="banner">
 		<div id="slider">
 		@foreach($lunbo as $lb)
 			<a href="#"><img src="{{ url('/updates') }}/{{$lb -> pic}}"></a>
 		@endforeach
+			<a href="#"><img src="{{ url('/home/images/banner3.jpg') }}"></a>
+			<a href="#"><img src="{{ url('/home/images/banner4.jpg') }}"></a>
+			<a href="#"><img src="{{ url('/home/images/banner5.jpg') }}"></a>
 		</div>
 	</div>
 @if(session('utp'))
 <script type="text/javascript">
-	layer.alert('请以患者身份登录购买');
+		alert('请以患者身份登录购买');
 </script>
 @endif
 	<!-- 首页患者数量 -->
@@ -71,7 +75,7 @@
 			<div class="img">
 				<img src="{{ url('/home/images/box33.jpg')}}" alt="">
 				<div class="bg"></div>
-				<ul class="sub last">
+				<ul class="sub">
 					@foreach($hickey as $hi)
 						<li><a href="{{ url('/hickey/qxlist')}}/{{$hi -> id}}">{{ $hi -> cate }}
 						</a></li>
@@ -93,7 +97,7 @@
 			<p class="content" >
 				{{$set -> intro}}
 			</p>
-			<a href="{{ url('/contact/index/62') }}" class="layui-btn">
+			<a href="" class="layui-btn">
 				查看更多&nbsp;&nbsp;&nbsp;&nbsp;<i class="layui-icon">&#xe623;</i>
 			</a>
 		</div>

@@ -10,10 +10,25 @@
     <script type="text/javascript" src="{{ url('/home/layui/layui.js')}}"></script>
     <link rel="stylesheet" type="text/css" href="{{ url('/home/css/index.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('/home/layui/css/layui.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/common.css') }}">  
+    <link rel="stylesheet" type="text/css" href="{{ url('/home/css/common.css') }}">
+    
+   
+    <script type="text/javascript">
+        layui.use('element');
+        
+    </script>
+
+    
+    
+   
+
 </head>
 <body>
-
+@if(session('sskong'))
+<script type="text/javascript">
+        alert('请输入关键字搜索');
+</script>
+@endif
     <!-- 头部 -->
     <div id="head">
         <div class="top">
@@ -223,17 +238,6 @@
             }).mouseleave(function() {
                 layer.closeAll('tips'); //关闭所有的tips层  
             });
-        });
-
-        //判断搜索框是否有值
-        $('#search button').on('click', function() {
-            if ($.trim($('#search input[name=find]').val()) == '') {
-                layer.alert('请输入搜索关键字',{
-                    icon : 2,
-                    title : '警告'
-                });
-                return false;
-            }
         });
     </script>
 
